@@ -72,3 +72,92 @@ class Game:
 class Menu:
     Game.play_jbr('JBR')
 
+
+class Tile:
+    x = 0
+    y = -700 // 5
+    h = 1000 // 4 - 1
+    len_ = 700 // 5
+    flag = True
+
+    def pos(self, name):
+        self.x = name * 1000 // 4
+
+    def update(self, screen):
+        if self.flag:
+            pygame.draw.rect(screen, (0, 0, 0),
+                             [self.x, self.y, self.h, self.len_])
+        else:
+            pygame.draw.rect(screen, (180, 180, 180),
+                             [self.x, self.y, self.h, self.len_])
+
+    def click(self, position):
+        if position[0] in range(self.x, self.h + self.x):
+            if position[1] in range(self.y, self.len_ + self.y):
+                self.flag = False
+                return 0
+        return 1
+
+
+if __name__ == '__main__':
+    all_sprites = pygame.sprite.Group()
+    my_cursor_image = load_image('arrow.png')
+    my_cursor = pygame.sprite.Sprite(all_sprites)
+    my_cursor.image = my_cursor_image
+    my_cursor.rect = my_cursor.image.get_rect()
+    pygame.mouse.set_visible(True)
+    clock = pygame.time.Clock()
+    map_ = [0, 1, 2, 1, 1, 2, 3, 3, 2, 1, 2, 3, 3, 1, 2, 3, 1, 0, 2, 3, 1, 0,
+            1, 2, 3, 0, 1, 2, 3]
+    lost = 0
+    time = 0
+    delta = 60
+    sb = []
+    speed = 5
+    score = 0
+    while lost == 0:
+        for i in map_:
+            sb.append(Tile())
+            sb[-1].pos(i)
+            if lost != 0:
+                break
+            for j in range(700 // (5 * speed)):
+                time += 1 / delta
+                clock.tick(delta)
+                screen.fill((224, 224, 255))
+                if lost != 0:
+                    break
+                for k in range(len(sb)):
+                    try:
+                        sb[k].y += speed
+                        sb[k].update(screen)
+                        if sb[k].y > 700 - sb[k].len_ and sb[k].flag:
+                            lost = 1
+                    finally:
+                        pass
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT or \
+                            (event.type == pygame.KEYDOWN and event.key
+                             == pygame.K_ESCAPE):
+                        pygame.quit()
+                    elif event.type == pygame.MOUSEBUTTONDOWN:
+                        lost = sb[score].click(pygame.mouse.get_pos())
+                        if lost != 0:
+                            Game.lose('', '')
+                        score += 1
+                msg(screen, "СЧЁТ " + str(score), color=(0, 128, 255),
+                    pos=(-1, 30))
+                pygame.display.update()
+        speed += 1
+    pygame.mixer.music.stop()
+    msg(screen, f"ВЫ ПРОИГРАЛИ. ВАШ СЧЁТ: {score - 1}", color=(110, 128, 225),
+        size=70, pos=(-1, -1))
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            if event.type == pygame.MOUSEMOTION:
+                my_cursor.rect.topleft = event.pos
+        pygame.display.flip()
+    pygame.quit()
