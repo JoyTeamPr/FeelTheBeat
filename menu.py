@@ -117,7 +117,7 @@ class JBR:
     def click(self):
         if mouse_pos[0] in range(30, 215):
             if mouse_pos[1] in range(140, 240):
-                os.startfile('main.pyw')
+                os.startfile('data/JBR.pyw')
 
 
 class AOBTD:
@@ -127,7 +127,7 @@ class AOBTD:
     def click(self):
         if mouse_pos[0] in range(266, 447):
             if mouse_pos[1] in range(140, 240):
-                os.startfile('main.pyw')
+                os.startfile('data/JBR.pyw')
 
 
 class DM:
@@ -137,7 +137,7 @@ class DM:
     def click(self):
         if mouse_pos[0] in range(266, 447):
             if mouse_pos[1] in range(140, 240):
-                os.startfile('main.pyw')
+                os.startfile('data/JBR.pyw')
 
 
 class BG:
@@ -147,7 +147,7 @@ class BG:
     def click(self):
         if mouse_pos[0] in range(266, 447):
             if mouse_pos[1] in range(140, 240):
-                os.startfile('main.pyw')
+                os.startfile('data/JBR.pyw')
 
 
 class MSKWYDITD:
@@ -157,7 +157,7 @@ class MSKWYDITD:
     def click(self):
         if mouse_pos[0] in range(266, 447):
             if mouse_pos[1] in range(140, 240):
-                os.startfile('main.pyw')
+                os.startfile('data/JBR.pyw')
 
 
 if __name__ == '__main__':
