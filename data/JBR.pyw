@@ -8,7 +8,7 @@ pygame.init()
 size = 1000, 700
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption('Feel the beat')
-pygame.display.set_icon(pygame.image.load('data/note.png'))
+pygame.display.set_icon(pygame.image.load('note.png'))
 
 
 def msg(screen, text, color=(55, 55, 55), size=36, pos=(-1, -1)):
@@ -25,7 +25,7 @@ def msg(screen, text, color=(55, 55, 55), size=36, pos=(-1, -1)):
 
 
 def load_image(name, colorkey=None):
-    fullname = os.path.join('data', name)
+    fullname = os.path.join('', name)
     if not os.path.isfile(fullname):
         print(f"Файл с изображением '{fullname}' не найден")
         sys.exit()
@@ -100,6 +100,7 @@ class Tile:
 
 
 if __name__ == '__main__':
+    win = False
     all_sprites = pygame.sprite.Group()
     my_cursor_image = load_image('arrow.png')
     my_cursor = pygame.sprite.Sprite(all_sprites)
@@ -107,8 +108,10 @@ if __name__ == '__main__':
     my_cursor.rect = my_cursor.image.get_rect()
     pygame.mouse.set_visible(True)
     clock = pygame.time.Clock()
-    map_ = [0, 1, 2, 1, 1, 2, 3, 3, 2, 1, 2, 3, 3, 1, 2, 3, 1, 0, 2, 3, 1, 0,
-            1, 2, 3, 0, 1, 2, 3]
+    map_ = [0, 1, 2, 3, 0, 2, 1, 0, 2, 1, 2, 3, 0, 1, 2, 3, 1, 0, 2, 3, 1, 0,
+            1, 2, 3, 0, 1, 2, 3, 1, 0, 2, 3, 1, 3, 0, 2, 1, 0, 3, 1, 0, 2, 3,
+            2, 3, 0, 1, 2, 3, 0, 2, 1, 3, 0, 2, 0, 1, 3, 2, 3, 0, 2, 1, 3, 0,
+            3, 0, 1, 2, 3, 0, 1, 3, 2, 0, 1, 3, 1, 2, 0, 3, 0, 1, 3, 0, 2, 1]
     lost = 0
     time = 0
     delta = 60
@@ -148,11 +151,17 @@ if __name__ == '__main__':
                 msg(screen, "СЧЁТ " + str(score), color=(0, 128, 255),
                     pos=(-1, 30))
                 pygame.display.update()
-        speed += 1
+        if score >= 263:
+            win = True
+            break
     pygame.mixer.music.stop()
-    msg(screen, f"ВЫ ПРОИГРАЛИ. ВАШ СЧЁТ: {score}", color=(110, 128, 225),
-        size=70, pos=(-1, -1))
-    Game.lose('', '')
+    if win:
+        msg(screen, "ВЫ ВЫЙГРАЛИ", color=(110, 128, 225),
+            size=70, pos=(-1, -1))
+    else:
+        msg(screen, f"ВЫ ПРОИГРАЛИ. ВАШ СЧЁТ: {score}", color=(110, 128, 225),
+            size=70, pos=(-1, -1))
+        Game.lose('', '')
     running = True
     while running:
         for event in pygame.event.get():
