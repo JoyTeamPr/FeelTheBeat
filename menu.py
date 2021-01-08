@@ -8,6 +8,7 @@ size = 1000, 700
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption('Feel the beat')
 pygame.display.set_icon(pygame.image.load('data/note.png'))
+mouse_pos = (0, 0)
 
 
 def load_image(name, colorkey=None):
@@ -34,10 +35,37 @@ class BackGround(pygame.sprite.Sprite):
         self.image = BackGround.image
         self.rect = self.image.get_rect()
         self.mask = pygame.mask.from_surface(self.image)
+        all_sprites.draw(screen)
+        all_sprites.update()
+
+
+class JBR:
+    def __init__(self):
+        super().__init__()
+        flag = False
+        if mouse_pos[0] in range(30, 215):
+            if mouse_pos[1] in range(140, 240):
+                flag = True
+                if flag:
+                    pygame.draw.rect(screen, (255, 255, 255),
+                                     (29, 135, 186, 101), 3)
+                else:
+                    flag = False
+                    all_sprites.draw(screen)
+            else:
+                flag = False
+                all_sprites.draw(screen)
+        else:
+            flag = False
+            all_sprites.draw(screen)
+
+    def click(self):
+        if mouse_pos[0] in range(30, 215):
+            if mouse_pos[1] in range(140, 240):
+                os.startfile('main.pyw')
 
 
 if __name__ == '__main__':
-    screen.fill((255, 255, 255))
     all_sprites = pygame.sprite.Group()
     background = BackGround()
 
@@ -47,10 +75,11 @@ if __name__ == '__main__':
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-
-        screen.fill((255, 255, 255))
-        all_sprites.draw(screen)
-        all_sprites.update()
+            if event.type == pygame.MOUSEMOTION:
+                mouse_pos = pygame.mouse.get_pos()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                JBR.click('')
+        JBR()
         pygame.display.flip()
         clock.tick(100)
     pygame.quit()
