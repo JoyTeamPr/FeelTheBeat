@@ -8,7 +8,7 @@ pygame.init()
 size = 1000, 700
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption('Feel the beat')
-pygame.display.set_icon(pygame.image.load('note.png'))
+pygame.display.set_icon(pygame.image.load('data/note.png'))
 
 
 def msg(screen, text, color=(55, 55, 55), size=36, pos=(-1, -1)):
@@ -102,7 +102,7 @@ class Tile:
 if __name__ == '__main__':
     win = False
     all_sprites = pygame.sprite.Group()
-    my_cursor_image = load_image('arrow.png')
+    my_cursor_image = load_image('data/arrow.png')
     my_cursor = pygame.sprite.Sprite(all_sprites)
     my_cursor.image = my_cursor_image
     my_cursor.rect = my_cursor.image.get_rect()
