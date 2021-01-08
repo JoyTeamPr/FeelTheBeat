@@ -27,6 +27,38 @@ def load_image(name, colorkey=None):
     return image
 
 
+def motion():
+    flag = False
+    if mouse_pos[0] in range(30, 215):
+        if mouse_pos[1] in range(140, 240):
+            flag = True
+            if flag:
+                pygame.draw.rect(screen, (255, 255, 255),
+                                 (29, 135, 186, 101), 3)
+            else:
+                flag = False
+                all_sprites.draw(screen)
+        else:
+            flag = False
+            all_sprites.draw(screen)
+
+    elif mouse_pos[0] in range(266, 447):
+        if mouse_pos[1] in range(140, 240):
+            flag = True
+            if flag:
+                pygame.draw.rect(screen, (255, 255, 255),
+                                 (265, 137, 184, 101), 3)
+            else:
+                flag = False
+                all_sprites.draw(screen)
+        else:
+            flag = False
+            all_sprites.draw(screen)
+    else:
+        flag = False
+        all_sprites.draw(screen)
+
+
 class BackGround(pygame.sprite.Sprite):
     image = load_image('menu.png')
 
@@ -42,22 +74,6 @@ class BackGround(pygame.sprite.Sprite):
 class JBR:
     def __init__(self):
         super().__init__()
-        flag = False
-        if mouse_pos[0] in range(30, 215):
-            if mouse_pos[1] in range(140, 240):
-                flag = True
-                if flag:
-                    pygame.draw.rect(screen, (255, 255, 255),
-                                     (29, 135, 186, 101), 3)
-                else:
-                    flag = False
-                    all_sprites.draw(screen)
-            else:
-                flag = False
-                all_sprites.draw(screen)
-        else:
-            flag = False
-            all_sprites.draw(screen)
 
     def click(self):
         if mouse_pos[0] in range(30, 215):
@@ -65,10 +81,19 @@ class JBR:
                 os.startfile('main.pyw')
 
 
+class AOBTD:
+    def __init__(self):
+        super().__init__()
+
+    def click(self):
+        if mouse_pos[0] in range(266, 447):
+            if mouse_pos[1] in range(140, 240):
+                os.startfile('main.pyw')
+
+
 if __name__ == '__main__':
     all_sprites = pygame.sprite.Group()
     background = BackGround()
-
     clock = pygame.time.Clock()
     running = True
     while running:
@@ -77,9 +102,10 @@ if __name__ == '__main__':
                 running = False
             if event.type == pygame.MOUSEMOTION:
                 mouse_pos = pygame.mouse.get_pos()
+                print(mouse_pos)
             if event.type == pygame.MOUSEBUTTONDOWN:
                 JBR.click('')
-        JBR()
+        motion()
         pygame.display.flip()
         clock.tick(100)
     pygame.quit()
