@@ -54,6 +54,45 @@ def motion():
         else:
             flag = False
             all_sprites.draw(screen)
+
+    elif mouse_pos[0] in range(502, 686):
+        if mouse_pos[1] in range(140, 240):
+            flag = True
+            if flag:
+                pygame.draw.rect(screen, (255, 255, 255),
+                                 (501, 136, 186, 101), 3)
+            else:
+                flag = False
+                all_sprites.draw(screen)
+        else:
+            flag = False
+            all_sprites.draw(screen)
+
+    elif mouse_pos[0] in range(756, 939):
+        if mouse_pos[1] in range(140, 240):
+            flag = True
+            if flag:
+                pygame.draw.rect(screen, (255, 255, 255),
+                                 (755, 136, 186, 101), 3)
+            else:
+                flag = False
+                all_sprites.draw(screen)
+        else:
+            flag = False
+            all_sprites.draw(screen)
+
+    elif mouse_pos[0] in range(32, 213):
+        if mouse_pos[1] in range(274, 372):
+            flag = True
+            if flag:
+                pygame.draw.rect(screen, (255, 255, 255),
+                                 (31, 274, 213, 370), 3)
+            else:
+                flag = False
+                all_sprites.draw(screen)
+        else:
+            flag = False
+            all_sprites.draw(screen)
     else:
         flag = False
         all_sprites.draw(screen)
@@ -82,6 +121,36 @@ class JBR:
 
 
 class AOBTD:
+    def __init__(self):
+        super().__init__()
+
+    def click(self):
+        if mouse_pos[0] in range(266, 447):
+            if mouse_pos[1] in range(140, 240):
+                os.startfile('main.pyw')
+
+
+class DM:
+    def __init__(self):
+        super().__init__()
+
+    def click(self):
+        if mouse_pos[0] in range(266, 447):
+            if mouse_pos[1] in range(140, 240):
+                os.startfile('main.pyw')
+
+
+class BG:
+    def __init__(self):
+        super().__init__()
+
+    def click(self):
+        if mouse_pos[0] in range(266, 447):
+            if mouse_pos[1] in range(140, 240):
+                os.startfile('main.pyw')
+
+
+class MSKWYDITD:
     def __init__(self):
         super().__init__()
 
