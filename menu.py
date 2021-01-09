@@ -42,7 +42,7 @@ def motion():
             flag = False
             all_sprites.draw(screen)
 
-    elif mouse_pos[0] in range(266, 447):
+    if mouse_pos[0] in range(266, 447):
         if mouse_pos[1] in range(140, 240):
             flag = True
             if flag:
@@ -55,7 +55,7 @@ def motion():
             flag = False
             all_sprites.draw(screen)
 
-    elif mouse_pos[0] in range(502, 686):
+    if mouse_pos[0] in range(502, 686):
         if mouse_pos[1] in range(140, 240):
             flag = True
             if flag:
@@ -68,7 +68,7 @@ def motion():
             flag = False
             all_sprites.draw(screen)
 
-    elif mouse_pos[0] in range(756, 939):
+    if mouse_pos[0] in range(756, 939):
         if mouse_pos[1] in range(140, 240):
             flag = True
             if flag:
@@ -81,7 +81,7 @@ def motion():
             flag = False
             all_sprites.draw(screen)
 
-    elif mouse_pos[0] in range(32, 213):
+    if mouse_pos[0] in range(32, 213):
         if mouse_pos[1] in range(274, 372):
             flag = True
             if flag:
