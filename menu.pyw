@@ -250,6 +250,16 @@ class Settings:
                 os.startfile('settings.pyw')
 
 
+class Exit:
+    def __init__(self):
+        super().__init__()
+
+    def click(self):
+        if mouse_pos[0] in range(905, 1000):
+            if mouse_pos[1] in range(610, 700):
+                pygame.quit()
+
+
 if __name__ == '__main__':
     all_sprites = pygame.sprite.Group()
     background = BackGround()
@@ -277,6 +287,7 @@ if __name__ == '__main__':
                 A.click('')
                 Shop.click('')
                 Settings.click('')
+                Exit.click('')
         motion()
         pygame.display.flip()
         clock.tick(100)
