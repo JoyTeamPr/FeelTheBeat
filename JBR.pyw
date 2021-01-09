@@ -1,5 +1,6 @@
 import pygame
 import random
+import time
 import os
 import sys
 
@@ -7,7 +8,7 @@ pygame.font.init()
 pygame.init()
 size = 1000, 700
 screen = pygame.display.set_mode(size)
-pygame.display.set_caption('Feel the beat')
+pygame.display.set_caption('Jingle Bells Rock')
 pygame.display.set_icon(pygame.image.load('data/note.png'))
 
 
@@ -113,7 +114,7 @@ if __name__ == '__main__':
             2, 3, 0, 1, 2, 3, 0, 2, 1, 3, 0, 2, 0, 1, 3, 2, 3, 0, 2, 1, 3, 0,
             3, 0, 1, 2, 3, 0, 1, 3, 2, 0, 1, 3, 1, 2, 0, 3, 0, 1, 3, 0, 2, 1]
     lost = 0
-    time = 0
+    time_ = 0
     delta = 60
     sb = []
     speed = 5
@@ -125,7 +126,7 @@ if __name__ == '__main__':
             if lost != 0:
                 break
             for j in range(700 // (5 * speed)):
-                time += 1 / delta
+                time_ += 1 / delta
                 clock.tick(delta)
                 screen.fill((224, 224, 255))
                 if lost != 0:
@@ -148,20 +149,22 @@ if __name__ == '__main__':
                         if lost != 0:
                             Game.lose('', '')
                         score += 1
-                msg(screen, "СЧЁТ " + str(score), color=(0, 128, 255),
+                if score >= 270:
+                    win = True
+                    msg(screen, "ВЫ ВЫИГРАЛИ", color=(255, 100, 225),
+                        size=70, pos=(-1, -1))
+                    pygame.mixer.stop()
+                    pygame.display.flip()
+                    running = False
+                    time.sleep(2)
+                    pygame.quit()
+                msg(screen, "СЧЁТ " + str(score), color=(0, 90, 255),
                     pos=(-1, 30))
                 pygame.display.update()
-        if score >= 263:
-            win = True
-            break
     pygame.mixer.music.stop()
-    if win:
-        msg(screen, "ВЫ ВЫИГРАЛИ", color=(110, 128, 225),
-            size=70, pos=(-1, -1))
-    else:
-        msg(screen, f"ВЫ ПРОИГРАЛИ. ВАШ СЧЁТ: {score}", color=(110, 128, 225),
-            size=70, pos=(-1, -1))
-        Game.lose('', '')
+    msg(screen, f"ВЫ ПРОИГРАЛИ. ВАШ СЧЁТ: {score}", color=(110, 128, 225),
+        size=70, pos=(-1, -1))
+    Game.lose('', '')
     running = True
     while running:
         for event in pygame.event.get():
