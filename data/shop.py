@@ -1,4 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QIcon
 
 
 class Ui_mainWindow1(object):
@@ -412,6 +413,7 @@ if __name__ == "__main__":
 
     app = QtWidgets.QApplication(sys.argv)
     mainWindow = QtWidgets.QMainWindow()
+    mainWindow.setWindowIcon(QIcon('shop.png'))
     ui = Ui_mainWindow1()
     ui.setupUi(mainWindow)
     mainWindow.show()
