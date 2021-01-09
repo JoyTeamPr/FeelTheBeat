@@ -54,7 +54,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/background.png</pixmap>
+     <pixmap>background.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -73,7 +73,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/background1.png</pixmap>
+     <pixmap>background1.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -92,7 +92,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/shelf.png</pixmap>
+     <pixmap>shelf.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -111,7 +111,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/shelf.png</pixmap>
+     <pixmap>shelf.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -181,7 +181,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/price.png</pixmap>
+     <pixmap>price.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -203,7 +203,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/price.png</pixmap>
+     <pixmap>price.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -249,7 +249,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/heart.png</pixmap>
+     <pixmap>heart.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -268,7 +268,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/heart.png</pixmap>
+     <pixmap>heart.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -415,7 +415,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../OneDrive/Рабочий стол/Screenshot_4.png</pixmap>
+     <pixmap>Screenshot_4.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -434,7 +434,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../OneDrive/Рабочий стол/Screenshot_5.png</pixmap>
+     <pixmap>Screenshot_5.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -453,7 +453,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../OneDrive/Рабочий стол/Screenshot_6.png</pixmap>
+     <pixmap>Screenshot_6.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -472,7 +472,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../OneDrive/Рабочий стол/Screenshot_7.png</pixmap>
+     <pixmap>Screenshot_7.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -491,7 +491,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../OneDrive/Рабочий стол/Screenshot_8.png</pixmap>
+     <pixmap>Screenshot_8.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -510,7 +510,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../OneDrive/Рабочий стол/Screenshot_10.png</pixmap>
+     <pixmap>Screenshot_10.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -529,7 +529,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../OneDrive/Рабочий стол/Screenshot_11.png</pixmap>
+     <pixmap>Screenshot_11.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -548,7 +548,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../OneDrive/Рабочий стол/Screenshot_12.png</pixmap>
+     <pixmap>Screenshot_12.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -570,7 +570,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/price.png</pixmap>
+     <pixmap>price.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -592,7 +592,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/price.png</pixmap>
+     <pixmap>price.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -614,7 +614,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/price.png</pixmap>
+     <pixmap>price.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -636,7 +636,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/price.png</pixmap>
+     <pixmap>price.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -658,7 +658,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/price.png</pixmap>
+     <pixmap>price.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -680,7 +680,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/price.png</pixmap>
+     <pixmap>price.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -702,7 +702,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/price.png</pixmap>
+     <pixmap>price.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -724,7 +724,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>data/price.png</pixmap>
+     <pixmap>price.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
