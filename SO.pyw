@@ -155,7 +155,7 @@ if __name__ == '__main__':
                 msg(screen, "СЧЁТ " + str(score), color=(0, 90, 255),
                     pos=(-1, 30))
                 pygame.display.update()
-        if score >= 261:
+        if score >= 260:
             win = True
             break
     pygame.mixer.music.stop()
