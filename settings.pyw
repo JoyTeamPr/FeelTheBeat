@@ -48,7 +48,7 @@ class Ui_Settings(object):
         self.label_2 = QtWidgets.QLabel(self.Settings_2)
         self.label_2.setGeometry(QtCore.QRect(0, 0, 521, 181))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("background1.png"))
+        self.label_2.setPixmap(QtGui.QPixmap("data/background1.png"))
         self.label_2.setObjectName("label_2")
         self.label_2.raise_()
         self.slider.raise_()
@@ -76,7 +76,7 @@ if __name__ == "__main__":
 
     app = QtWidgets.QApplication(sys.argv)
     Settings = QtWidgets.QMainWindow()
-    Settings.setWindowIcon(QIcon('sett.png'))
+    Settings.setWindowIcon(QIcon('data/sett.png'))
     ui = Ui_Settings()
     ui.setupUi(Settings)
     Settings.show()
