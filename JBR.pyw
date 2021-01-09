@@ -156,7 +156,7 @@ if __name__ == '__main__':
             break
     pygame.mixer.music.stop()
     if win:
-        msg(screen, "ВЫ ВЫЙГРАЛИ", color=(110, 128, 225),
+        msg(screen, "ВЫ ВЫИГРАЛИ", color=(110, 128, 225),
             size=70, pos=(-1, -1))
     else:
         msg(screen, f"ВЫ ПРОИГРАЛИ. ВАШ СЧЁТ: {score}", color=(110, 128, 225),
