@@ -1,0 +1,240 @@
+Index: menu.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import pygame\r\nimport os\r\nimport sys\r\n\r\npygame.font.init()\r\npygame.init()\r\nsize = 1000, 700\r\nscreen = pygame.display.set_mode(size)\r\npygame.display.set_caption('Feel the beat')\r\npygame.display.set_icon(pygame.image.load('data/note.png'))\r\nmouse_pos = (0, 0)\r\n\r\n\r\ndef load_image(name, colorkey=None):\r\n    fullname = os.path.join('data', name)\r\n    if not os.path.isfile(fullname):\r\n        print(f\"Файл с изображением '{fullname}' не найден\")\r\n        sys.exit()\r\n    image = pygame.image.load(fullname)\r\n    if colorkey is not None:\r\n        image = image.convert()\r\n        if colorkey == -1:\r\n            colorkey = image.get_at((0, 0))\r\n        image.set_colorkey(colorkey)\r\n    else:\r\n        image = image.convert_alpha()\r\n    return image\r\n\r\n\r\ndef motion():\r\n    flag = False\r\n    if mouse_pos[0] in range(30, 215):\r\n        if mouse_pos[1] in range(140, 240):\r\n            flag = True\r\n            if flag:\r\n                pygame.draw.rect(screen, (255, 255, 255),\r\n                                 (29, 135, 186, 101), 3)\r\n            else:\r\n                flag = False\r\n                all_sprites.draw(screen)\r\n        else:\r\n            flag = False\r\n            all_sprites.draw(screen)\r\n\r\n    elif mouse_pos[0] in range(266, 447):\r\n        if mouse_pos[1] in range(140, 240):\r\n            flag = True\r\n            if flag:\r\n                pygame.draw.rect(screen, (255, 255, 255),\r\n                                 (265, 137, 184, 101), 3)\r\n            else:\r\n                flag = False\r\n                all_sprites.draw(screen)\r\n        else:\r\n            flag = False\r\n            all_sprites.draw(screen)\r\n\r\n    elif mouse_pos[0] in range(502, 686):\r\n        if mouse_pos[1] in range(140, 240):\r\n            flag = True\r\n            if flag:\r\n                pygame.draw.rect(screen, (255, 255, 255),\r\n                                 (501, 136, 186, 101), 3)\r\n            else:\r\n                flag = False\r\n                all_sprites.draw(screen)\r\n        else:\r\n            flag = False\r\n            all_sprites.draw(screen)\r\n\r\n    elif mouse_pos[0] in range(756, 939):\r\n        if mouse_pos[1] in range(140, 240):\r\n            flag = True\r\n            if flag:\r\n                pygame.draw.rect(screen, (255, 255, 255),\r\n                                 (755, 136, 186, 101), 3)\r\n            else:\r\n                flag = False\r\n                all_sprites.draw(screen)\r\n        else:\r\n            flag = False\r\n            all_sprites.draw(screen)\r\n\r\n    elif mouse_pos[0] in range(32, 213):\r\n        if mouse_pos[1] in range(274, 372):\r\n            flag = True\r\n            if flag:\r\n                pygame.draw.rect(screen, (255, 255, 255),\r\n                                 (31, 274, 213, 370), 3)\r\n            else:\r\n                flag = False\r\n                all_sprites.draw(screen)\r\n        else:\r\n            flag = False\r\n            all_sprites.draw(screen)\r\n    else:\r\n        flag = False\r\n        all_sprites.draw(screen)\r\n\r\n\r\nclass BackGround(pygame.sprite.Sprite):\r\n    image = load_image('menu.png')\r\n\r\n    def __init__(self):\r\n        super().__init__(all_sprites)\r\n        self.image = BackGround.image\r\n        self.rect = self.image.get_rect()\r\n        self.mask = pygame.mask.from_surface(self.image)\r\n        all_sprites.draw(screen)\r\n        all_sprites.update()\r\n\r\n\r\nclass JBR:\r\n    def __init__(self):\r\n        super().__init__()\r\n\r\n    def click(self):\r\n        if mouse_pos[0] in range(30, 215):\r\n            if mouse_pos[1] in range(140, 240):\r\n                os.startfile('JBR.pyw')\r\n\r\n\r\nclass AOBTD:\r\n    def __init__(self):\r\n        super().__init__()\r\n\r\n    def click(self):\r\n        if mouse_pos[0] in range(266, 447):\r\n            if mouse_pos[1] in range(140, 240):\r\n                os.startfile('JBR.pyw')\r\n\r\n\r\nclass DM:\r\n    def __init__(self):\r\n        super().__init__()\r\n\r\n    def click(self):\r\n        if mouse_pos[0] in range(266, 447):\r\n            if mouse_pos[1] in range(140, 240):\r\n                os.startfile('JBR.pyw')\r\n\r\n\r\nclass BG:\r\n    def __init__(self):\r\n        super().__init__()\r\n\r\n    def click(self):\r\n        if mouse_pos[0] in range(266, 447):\r\n            if mouse_pos[1] in range(140, 240):\r\n                os.startfile('JBR.pyw')\r\n\r\n\r\nclass MSKWYDITD:\r\n    def __init__(self):\r\n        super().__init__()\r\n\r\n    def click(self):\r\n        if mouse_pos[0] in range(266, 447):\r\n            if mouse_pos[1] in range(140, 240):\r\n                os.startfile('JBR.pyw')\r\n\r\n\r\nif __name__ == '__main__':\r\n    all_sprites = pygame.sprite.Group()\r\n    background = BackGround()\r\n    clock = pygame.time.Clock()\r\n    running = True\r\n    while running:\r\n        for event in pygame.event.get():\r\n            if event.type == pygame.QUIT:\r\n                running = False\r\n            if event.type == pygame.MOUSEMOTION:\r\n                mouse_pos = pygame.mouse.get_pos()\r\n                print(mouse_pos)\r\n            if event.type == pygame.MOUSEBUTTONDOWN:\r\n                JBR.click('')\r\n        motion()\r\n        pygame.display.flip()\r\n        clock.tick(100)\r\n    pygame.quit()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- menu.py	(revision a9668689e94036ba0070136e399e537122ca1013)
++++ menu.py	(date 1610187723713)
+@@ -29,6 +29,7 @@
+ 
+ def motion():
+     flag = False
++
+     if mouse_pos[0] in range(30, 215):
+         if mouse_pos[1] in range(140, 240):
+             flag = True
+@@ -42,12 +43,12 @@
+             flag = False
+             all_sprites.draw(screen)
+ 
+-    elif mouse_pos[0] in range(266, 447):
+-        if mouse_pos[1] in range(140, 240):
++    elif mouse_pos[0] in range(30, 212):
++        if mouse_pos[1] in range(274, 372):
+             flag = True
+             if flag:
+                 pygame.draw.rect(screen, (255, 255, 255),
+-                                 (265, 137, 184, 101), 3)
++                                 (31, 274, 182, 99), 3)
+             else:
+                 flag = False
+                 all_sprites.draw(screen)
+@@ -55,12 +56,12 @@
+             flag = False
+             all_sprites.draw(screen)
+ 
+-    elif mouse_pos[0] in range(502, 686):
++    elif mouse_pos[0] in range(756, 939):
+         if mouse_pos[1] in range(140, 240):
+             flag = True
+             if flag:
+                 pygame.draw.rect(screen, (255, 255, 255),
+-                                 (501, 136, 186, 101), 3)
++                                 (755, 136, 186, 101), 3)
+             else:
+                 flag = False
+                 all_sprites.draw(screen)
+@@ -68,12 +69,12 @@
+             flag = False
+             all_sprites.draw(screen)
+ 
+-    elif mouse_pos[0] in range(756, 939):
++    elif mouse_pos[0] in range(266, 447):
+         if mouse_pos[1] in range(140, 240):
+             flag = True
+             if flag:
+                 pygame.draw.rect(screen, (255, 255, 255),
+-                                 (755, 136, 186, 101), 3)
++                                 (265, 137, 184, 101), 3)
+             else:
+                 flag = False
+                 all_sprites.draw(screen)
+@@ -81,12 +82,12 @@
+             flag = False
+             all_sprites.draw(screen)
+ 
+-    elif mouse_pos[0] in range(32, 213):
+-        if mouse_pos[1] in range(274, 372):
++    elif mouse_pos[0] in range(502, 686):
++        if mouse_pos[1] in range(140, 240):
+             flag = True
+             if flag:
+                 pygame.draw.rect(screen, (255, 255, 255),
+-                                 (31, 274, 213, 370), 3)
++                                 (501, 136, 186, 101), 3)
+             else:
+                 flag = False
+                 all_sprites.draw(screen)
+@@ -127,7 +128,7 @@
+     def click(self):
+         if mouse_pos[0] in range(266, 447):
+             if mouse_pos[1] in range(140, 240):
+-                os.startfile('JBR.pyw')
++                os.startfile('AOBTD.pyw')
+ 
+ 
+ class DM:
+@@ -135,9 +136,9 @@
+         super().__init__()
+ 
+     def click(self):
+-        if mouse_pos[0] in range(266, 447):
++        if mouse_pos[0] in range(501, 685):
+             if mouse_pos[1] in range(140, 240):
+-                os.startfile('JBR.pyw')
++                os.startfile('DM.pyw')
+ 
+ 
+ class BG:
+@@ -145,9 +146,9 @@
+         super().__init__()
+ 
+     def click(self):
+-        if mouse_pos[0] in range(266, 447):
++        if mouse_pos[0] in range(755, 938):
+             if mouse_pos[1] in range(140, 240):
+-                os.startfile('JBR.pyw')
++                os.startfile('BG.pyw')
+ 
+ 
+ class MSKWYDITD:
+@@ -155,9 +156,79 @@
+         super().__init__()
+ 
+     def click(self):
+-        if mouse_pos[0] in range(266, 447):
+-            if mouse_pos[1] in range(140, 240):
+-                os.startfile('JBR.pyw')
++        if mouse_pos[0] in range(33, 212):
++            if mouse_pos[1] in range(274, 371):
++                os.startfile('LEU.pyw')
++
++
++class SNA:
++    def __init__(self):
++        super().__init__()
++
++    def click(self):
++        if mouse_pos[0] in range(267, 448):
++            if mouse_pos[1] in range(274, 371):
++                os.startfile('SNA.pyw')
++
++
++class SO:
++    def __init__(self):
++        super().__init__()
++
++    def click(self):
++        if mouse_pos[0] in range(503, 682):
++            if mouse_pos[1] in range(274, 371):
++                os.startfile('SO.pyw')
++
++
++class OTR:
++    def __init__(self):
++        super().__init__()
++
++    def click(self):
++        if mouse_pos[0] in range(758, 938):
++            if mouse_pos[1] in range(274, 371):
++                os.startfile('OTR.pyw')
++
++
++class T:
++    def __init__(self):
++        super().__init__()
++
++    def click(self):
++        if mouse_pos[0] in range(29, 214):
++            if mouse_pos[1] in range(409, 510):
++                os.startfile('T.pyw')
++
++
++class BL:
++    def __init__(self):
++        super().__init__()
++
++    def click(self):
++        if mouse_pos[0] in range(267, 449):
++            if mouse_pos[1] in range(409, 510):
++                os.startfile('BL.pyw')
++
++
++class RA:
++    def __init__(self):
++        super().__init__()
++
++    def click(self):
++        if mouse_pos[0] in range(503, 682):
++            if mouse_pos[1] in range(409, 510):
++                os.startfile('RA.pyw')
++
++
++class A:
++    def __init__(self):
++        super().__init__()
++
++    def click(self):
++        if mouse_pos[0] in range(758, 938):
++            if mouse_pos[1] in range(409, 510):
++                os.startfile('A.pyw')
+ 
+ 
+ if __name__ == '__main__':
+@@ -174,6 +245,17 @@
+                 print(mouse_pos)
+             if event.type == pygame.MOUSEBUTTONDOWN:
+                 JBR.click('')
++                AOBTD.click('')
++                DM.click('')
++                BG.click('')
++                MSKWYDITD.click('')
++                SNA.click('')
++                SO.click('')
++                OTR.click('')
++                T.click('')
++                BL.click('')
++                RA.click('')
++                A.click('')
+         motion()
+         pygame.display.flip()
+         clock.tick(100)
+Index: JBR.pyw
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import pygame\r\nimport random\r\nimport os\r\nimport sys\r\n\r\npygame.font.init()\r\npygame.init()\r\nsize = 1000, 700\r\nscreen = pygame.display.set_mode(size)\r\npygame.display.set_caption('Feel the beat')\r\npygame.display.set_icon(pygame.image.load('data/note.png'))\r\n\r\n\r\ndef msg(screen, text, color=(55, 55, 55), size=36, pos=(-1, -1)):\r\n    if pos[0] == -1:\r\n        pos = (screen.get_rect().centerx, pos[1])\r\n    if pos[1] == -1:\r\n        pos = (pos[0], screen.get_rect().centery)\r\n    font = pygame.font.Font('data/19846.otf', size)\r\n    text = font.render(text, 1, color)\r\n    textpos = text.get_rect()\r\n    textpos.centerx = pos[0]\r\n    textpos.centery = pos[1]\r\n    screen.blit(text, textpos)\r\n\r\n\r\ndef load_image(name, colorkey=None):\r\n    fullname = os.path.join('', name)\r\n    if not os.path.isfile(fullname):\r\n        print(f\"Файл с изображением '{fullname}' не найден\")\r\n        sys.exit()\r\n    image = pygame.image.load(fullname)\r\n    if colorkey is not None:\r\n        image = image.convert()\r\n        if colorkey == -1:\r\n            colorkey = image.get_at((0, 0))\r\n        image.set_colorkey(colorkey)\r\n    else:\r\n        image = image.convert_alpha()\r\n    return image\r\n\r\n\r\ndef load_sound(name):\r\n    if not pygame.mixer or not pygame.mixer.get_init():\r\n        pass\r\n    try:\r\n        sound = pygame.mixer.Sound(name)\r\n    except pygame.error:\r\n        print(f'Файл со звуком \"{sound}\" не найден')\r\n    return sound\r\n\r\n\r\nclass Game:\r\n    def __init__(self):\r\n        super().__init__()\r\n        self.loosing = []\r\n\r\n    def play_jbr(self):\r\n        song_jbr = load_sound('music/JBR.mp3')\r\n        song_jbr.play()\r\n        song_jbr.set_volume(0.3)\r\n\r\n    def lose(self, name):\r\n        pygame.mixer.stop()\r\n        loosing1 = load_sound('music/Проигрыш (1).mp3')\r\n        loosing2 = load_sound('music/Проигрыш (2).mp3')\r\n        loosing3 = load_sound('music/Проигрыш (3).mp3')\r\n        loosing = [loosing1, loosing2, loosing3]\r\n        random.choice(loosing).play()\r\n\r\n\r\nclass Menu:\r\n    Game.play_jbr('JBR')\r\n\r\n\r\nclass Tile:\r\n    x = 0\r\n    y = -700 // 5\r\n    h = 1000 // 4 - 1\r\n    len_ = 700 // 5\r\n    flag = True\r\n\r\n    def pos(self, name):\r\n        self.x = name * 1000 // 4\r\n\r\n    def update(self, screen):\r\n        if self.flag:\r\n            pygame.draw.rect(screen, (0, 0, 0),\r\n                             [self.x, self.y, self.h, self.len_])\r\n        else:\r\n            pygame.draw.rect(screen, (180, 180, 180),\r\n                             [self.x, self.y, self.h, self.len_])\r\n\r\n    def click(self, position):\r\n        if position[0] in range(self.x, self.h + self.x):\r\n            if position[1] in range(self.y, self.len_ + self.y):\r\n                self.flag = False\r\n                return 0\r\n        return 1\r\n\r\n\r\nif __name__ == '__main__':\r\n    win = False\r\n    all_sprites = pygame.sprite.Group()\r\n    my_cursor_image = load_image('data/arrow.png')\r\n    my_cursor = pygame.sprite.Sprite(all_sprites)\r\n    my_cursor.image = my_cursor_image\r\n    my_cursor.rect = my_cursor.image.get_rect()\r\n    pygame.mouse.set_visible(True)\r\n    clock = pygame.time.Clock()\r\n    map_ = [0, 1, 2, 3, 0, 2, 1, 0, 2, 1, 2, 3, 0, 1, 2, 3, 1, 0, 2, 3, 1, 0,\r\n            1, 2, 3, 0, 1, 2, 3, 1, 0, 2, 3, 1, 3, 0, 2, 1, 0, 3, 1, 0, 2, 3,\r\n            2, 3, 0, 1, 2, 3, 0, 2, 1, 3, 0, 2, 0, 1, 3, 2, 3, 0, 2, 1, 3, 0,\r\n            3, 0, 1, 2, 3, 0, 1, 3, 2, 0, 1, 3, 1, 2, 0, 3, 0, 1, 3, 0, 2, 1]\r\n    lost = 0\r\n    time = 0\r\n    delta = 60\r\n    sb = []\r\n    speed = 5\r\n    score = 0\r\n    while lost == 0:\r\n        for i in map_:\r\n            sb.append(Tile())\r\n            sb[-1].pos(i)\r\n            if lost != 0:\r\n                break\r\n            for j in range(700 // (5 * speed)):\r\n                time += 1 / delta\r\n                clock.tick(delta)\r\n                screen.fill((224, 224, 255))\r\n                if lost != 0:\r\n                    break\r\n                for k in range(len(sb)):\r\n                    try:\r\n                        sb[k].y += speed\r\n                        sb[k].update(screen)\r\n                        if sb[k].y > 700 - sb[k].len_ and sb[k].flag:\r\n                            lost = 1\r\n                    finally:\r\n                        pass\r\n                for event in pygame.event.get():\r\n                    if event.type == pygame.QUIT or \\\r\n                            (event.type == pygame.KEYDOWN and event.key\r\n                             == pygame.K_ESCAPE):\r\n                        pygame.quit()\r\n                    elif event.type == pygame.MOUSEBUTTONDOWN:\r\n                        lost = sb[score].click(pygame.mouse.get_pos())\r\n                        if lost != 0:\r\n                            Game.lose('', '')\r\n                        score += 1\r\n                msg(screen, \"СЧЁТ \" + str(score), color=(0, 128, 255),\r\n                    pos=(-1, 30))\r\n                pygame.display.update()\r\n        if score >= 263:\r\n            win = True\r\n            break\r\n    pygame.mixer.music.stop()\r\n    if win:\r\n        msg(screen, \"ВЫ ВЫЙГРАЛИ\", color=(110, 128, 225),\r\n            size=70, pos=(-1, -1))\r\n    else:\r\n        msg(screen, f\"ВЫ ПРОИГРАЛИ. ВАШ СЧЁТ: {score}\", color=(110, 128, 225),\r\n            size=70, pos=(-1, -1))\r\n        Game.lose('', '')\r\n    running = True\r\n    while running:\r\n        for event in pygame.event.get():\r\n            if event.type == pygame.QUIT:\r\n                running = False\r\n            if event.type == pygame.MOUSEMOTION:\r\n                my_cursor.rect.topleft = event.pos\r\n        pygame.display.flip()\r\n    pygame.quit()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- JBR.pyw	(revision a9668689e94036ba0070136e399e537122ca1013)
++++ JBR.pyw	(date 1610187629640)
+@@ -127,7 +127,7 @@
+             for j in range(700 // (5 * speed)):
+                 time += 1 / delta
+                 clock.tick(delta)
+-                screen.fill((224, 224, 255))
++                screen.fill((255, 105, 105))
+                 if lost != 0:
+                     break
+                 for k in range(len(sb)):
+@@ -156,7 +156,7 @@
+             break
+     pygame.mixer.music.stop()
+     if win:
+-        msg(screen, "ВЫ ВЫЙГРАЛИ", color=(110, 128, 225),
++        msg(screen, "ВЫ ВЫИГРАЛИ", color=(110, 128, 225),
+             size=70, pos=(-1, -1))
+     else:
+         msg(screen, f"ВЫ ПРОИГРАЛИ. ВАШ СЧЁТ: {score}", color=(110, 128, 225),
