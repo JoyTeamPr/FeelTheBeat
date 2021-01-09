@@ -152,7 +152,7 @@ if __name__ == '__main__':
                     elif event.type == pygame.MOUSEMOTION:
                         my_cursor.rect.topleft = event.pos
                         all_sprites.update()
-                msg(screen, "СЧЁТ " + str(score), color=(0, 90, 255),
+                msg(screen, "СЧЁТ " + str(score), color=(255, 255, 255),
                     pos=(-1, 30))
                 pygame.display.update()
         if score >= 145:
