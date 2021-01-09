@@ -1,5 +1,6 @@
 import pygame
 import random
+import time
 import os
 import sys
 
@@ -114,7 +115,7 @@ if __name__ == '__main__':
             2, 1, 3, 2, 3, 1, 0, 2, 3, 2, 1, 0, 2, 3, 1, 0, 2, 3, 0, 2, 1, 0,
             2, 1, 3, 2, 1, 0, 3, 0, 1, 2, 0, 3]
     lost = 0
-    time = 0
+    time_ = 0
     delta = 60
     sb = []
     speed = 3
@@ -126,7 +127,7 @@ if __name__ == '__main__':
             if lost != 0:
                 break
             for j in range(700 // (5 * speed)):
-                time += 1 / delta
+                time_ += 1 / delta
                 clock.tick(delta)
                 screen.fill((48, 73, 255))
                 if lost != 0:
@@ -155,20 +156,20 @@ if __name__ == '__main__':
                 msg(screen, "СЧЁТ " + str(score), color=(255, 255, 255),
                     pos=(-1, 30))
                 pygame.display.update()
-        if score >= 145:
-            win = True
-            break
+                if score >= 145:
+                    win = True
+                    msg(screen, "ВЫ ВЫИГРАЛИ", color=(255, 100, 225),
+                        size=70, pos=(-1, -1))
+                    pygame.mixer.stop()
+                    pygame.display.flip()
+                    running = False
+                    time.sleep(2)
+                    pygame.quit()
     pygame.mixer.music.stop()
-    if win:
-        msg(screen, "ВЫ ВЫИГРАЛИ", color=(10, 100, 225),
-            size=70, pos=(-1, -1))
-        pygame.mixer.stop()
-        pygame.display.flip()
-    else:
-        msg(screen, f"ВЫ ПРОИГРАЛИ. ВАШ СЧЁТ: {score}", color=(10, 100, 225),
-            size=70, pos=(-1, -1))
-        Game.lose('', '')
-        pygame.display.flip()
+    msg(screen, f"ВЫ ПРОИГРАЛИ. ВАШ СЧЁТ: {score}", color=(155, 155, 155),
+        size=70, pos=(-1, -1))
+    Game.lose('', '')
+    pygame.display.flip()
     running = True
     while running:
         for event in pygame.event.get():
