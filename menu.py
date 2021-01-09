@@ -229,6 +229,15 @@ class A:
             if mouse_pos[1] in range(409, 510):
                 os.startfile('A.pyw')
 
+class Shop:
+    def __init__(self):
+        super().__init__()
+
+    def click(self):
+        if mouse_pos[0] in range(273, 385):
+            if mouse_pos[1] in range(607, 700):
+                os.startfile('shop.py')
+
 
 if __name__ == '__main__':
     all_sprites = pygame.sprite.Group()
@@ -255,6 +264,7 @@ if __name__ == '__main__':
                 BL.click('')
                 RA.click('')
                 A.click('')
+                Shop.click('')
         motion()
         pygame.display.flip()
         clock.tick(100)
