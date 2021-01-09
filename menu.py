@@ -42,7 +42,7 @@ def motion():
             flag = False
             all_sprites.draw(screen)
 
-    if mouse_pos[0] in range(266, 447):
+    elif mouse_pos[0] in range(266, 447):
         if mouse_pos[1] in range(140, 240):
             flag = True
             if flag:
@@ -55,7 +55,7 @@ def motion():
             flag = False
             all_sprites.draw(screen)
 
-    if mouse_pos[0] in range(502, 686):
+    elif mouse_pos[0] in range(502, 686):
         if mouse_pos[1] in range(140, 240):
             flag = True
             if flag:
@@ -68,7 +68,7 @@ def motion():
             flag = False
             all_sprites.draw(screen)
 
-    if mouse_pos[0] in range(756, 939):
+    elif mouse_pos[0] in range(756, 939):
         if mouse_pos[1] in range(140, 240):
             flag = True
             if flag:
@@ -81,7 +81,7 @@ def motion():
             flag = False
             all_sprites.draw(screen)
 
-    if mouse_pos[0] in range(32, 213):
+    elif mouse_pos[0] in range(32, 213):
         if mouse_pos[1] in range(274, 372):
             flag = True
             if flag:
@@ -127,7 +127,7 @@ class AOBTD:
     def click(self):
         if mouse_pos[0] in range(266, 447):
             if mouse_pos[1] in range(140, 240):
-                os.startfile('JBR.pyw')
+                os.startfile('AOBTD.pyw')
 
 
 class DM:
@@ -135,9 +135,9 @@ class DM:
         super().__init__()
 
     def click(self):
-        if mouse_pos[0] in range(266, 447):
+        if mouse_pos[0] in range(502, 683):
             if mouse_pos[1] in range(140, 240):
-                os.startfile('JBR.pyw')
+                os.startfile('DM.pyw')
 
 
 class BG:
@@ -145,9 +145,9 @@ class BG:
         super().__init__()
 
     def click(self):
-        if mouse_pos[0] in range(266, 447):
+        if mouse_pos[0] in range(757, 938):
             if mouse_pos[1] in range(140, 240):
-                os.startfile('JBR.pyw')
+                os.startfile('BG.pyw')
 
 
 class MSKWYDITD:
@@ -155,9 +155,79 @@ class MSKWYDITD:
         super().__init__()
 
     def click(self):
+        if mouse_pos[0] in range(30, 215):
+            if mouse_pos[1] in range(274, 370):
+                os.startfile('LEU.pyw')
+
+
+class SNA:
+    def __init__(self):
+        super().__init__()
+
+    def click(self):
         if mouse_pos[0] in range(266, 447):
-            if mouse_pos[1] in range(140, 240):
-                os.startfile('JBR.pyw')
+            if mouse_pos[1] in range(274, 370):
+                os.startfile('SNA.pyw')
+
+
+class SO:
+    def __init__(self):
+        super().__init__()
+
+    def click(self):
+        if mouse_pos[0] in range(502, 683):
+            if mouse_pos[1] in range(274, 370):
+                os.startfile('SO.pyw')
+
+
+class OTR:
+    def __init__(self):
+        super().__init__()
+
+    def click(self):
+        if mouse_pos[0] in range(757, 938):
+            if mouse_pos[1] in range(274, 370):
+                os.startfile('OTR.pyw')
+
+
+class T:
+    def __init__(self):
+        super().__init__()
+
+    def click(self):
+        if mouse_pos[0] in range(30, 215):
+            if mouse_pos[1] in range(409, 510):
+                os.startfile('T.pyw')
+
+
+class BL:
+    def __init__(self):
+        super().__init__()
+
+    def click(self):
+        if mouse_pos[0] in range(266, 447):
+            if mouse_pos[1] in range(409, 510):
+                os.startfile('BL.pyw')
+
+
+class RA:
+    def __init__(self):
+        super().__init__()
+
+    def click(self):
+        if mouse_pos[0] in range(502, 683):
+            if mouse_pos[1] in range(409, 510):
+                os.startfile('RA.pyw')
+
+
+class A:
+    def __init__(self):
+        super().__init__()
+
+    def click(self):
+        if mouse_pos[0] in range(757, 938):
+            if mouse_pos[1] in range(409, 510):
+                os.startfile('A.pyw')
 
 
 if __name__ == '__main__':
@@ -174,6 +244,17 @@ if __name__ == '__main__':
                 print(mouse_pos)
             if event.type == pygame.MOUSEBUTTONDOWN:
                 JBR.click('')
+                AOBTD.click('')
+                DM.click('')
+                BG.click('')
+                MSKWYDITD.click('')
+                SNA.click('')
+                SO.click('')
+                OTR.click('')
+                T.click('')
+                BL.click('')
+                RA.click('')
+                A.click('')
         motion()
         pygame.display.flip()
         clock.tick(100)
