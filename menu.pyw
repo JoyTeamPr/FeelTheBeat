@@ -323,7 +323,7 @@ class Shop:
     def click(self):
         if mouse_pos[0] in range(273, 385):
             if mouse_pos[1] in range(610, 700):
-                os.startfile('shop.py')
+                os.startfile('shop.pyw')
 
 
 class Settings:
