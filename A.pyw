@@ -146,7 +146,7 @@ if __name__ == '__main__':
                     if event.type == pygame.QUIT or \
                             (event.type == pygame.KEYDOWN and event.key
                              == pygame.K_ESCAPE):
-                        pygame.quit()
+                        sys.exit()
                     elif event.type == pygame.MOUSEBUTTONDOWN:
                         lost = sb[score].click(pygame.mouse.get_pos())
                         if lost != 0:
@@ -188,7 +188,7 @@ if __name__ == '__main__':
                     con.commit()
                     con.close()
                     time.sleep(2)
-                    pygame.quit()
+                    sys.exit()
                 msg(screen, "СЧЁТ " + str(score), color=(0, 90, 255),
                     pos=(-1, 30))
                 pygame.display.update()
