@@ -20,10 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5d390fe-d1d4-474c-839c-129d984a10bd" name="Default Changelist" comment="songs bruh duh">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_01_2021_13_57__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_01_2021_13_57__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2021_14_23__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_01_2021_14_23__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/base.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/base.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shop.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/shop.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/shop.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/shop.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menu.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/menu.pyw" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,27 +58,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DM.pyw" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="JBR.pyw" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Program Files\Python38\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/JBR.pyw" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -128,6 +108,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="shop (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Program Files\Python38\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/shop.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="shop" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -152,10 +153,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.menu.pyw" />
+        <item itemvalue="Python.shop (1)" />
         <item itemvalue="Python.shop" />
         <item itemvalue="Python.main_start" />
         <item itemvalue="Python.DM.pyw" />
-        <item itemvalue="Python.JBR.pyw" />
       </list>
     </recent_temporary>
   </component>
@@ -252,25 +253,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610115415226" />
-    <state width="1515" height="172" key="GridCell.Tab.0.bottom" timestamp="1610294381008">
+    <state width="1515" height="172" key="GridCell.Tab.0.bottom" timestamp="1610297059711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="172" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610294381008" />
+    <state width="1515" height="172" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610297059711" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610200801589" />
-    <state width="1515" height="172" key="GridCell.Tab.0.center" timestamp="1610294381008">
+    <state width="1515" height="172" key="GridCell.Tab.0.center" timestamp="1610297059711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="172" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610294381008" />
+    <state width="1515" height="172" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610297059711" />
     <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610200801588" />
-    <state width="1515" height="172" key="GridCell.Tab.0.left" timestamp="1610294381008">
+    <state width="1515" height="172" key="GridCell.Tab.0.left" timestamp="1610297059711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="172" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610294381008" />
+    <state width="1515" height="172" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610297059711" />
     <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610200801588" />
-    <state width="1515" height="172" key="GridCell.Tab.0.right" timestamp="1610294381008">
+    <state width="1515" height="172" key="GridCell.Tab.0.right" timestamp="1610297059711">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="172" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610294381008" />
+    <state width="1515" height="172" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610297059711" />
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610200801588" />
     <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1610285785603">
       <screen x="0" y="0" width="1536" height="824" />
