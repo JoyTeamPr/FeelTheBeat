@@ -149,6 +149,8 @@ if __name__ == '__main__':
                         if lost != 0:
                             Game.lose('', '')
                         score += 1
+                    elif event.type == pygame.MOUSEMOTION:
+                        my_cursor.rect.topleft = event.pos
                 if score >= 270:
                     win = True
                     msg(screen, "ВЫ ВЫИГРАЛИ", color=(255, 100, 225),
@@ -170,7 +172,5 @@ if __name__ == '__main__':
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            if event.type == pygame.MOUSEMOTION:
-                my_cursor.rect.topleft = event.pos
         pygame.display.flip()
     pygame.quit()

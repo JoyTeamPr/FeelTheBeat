@@ -266,8 +266,9 @@ if __name__ == '__main__':
 
     all_sprites = pygame.sprite.Group()
     BackGround()
-    my_cursor_image = load_image('arrow1.png')
+    my_cursor_image = load_image('arrow.png')
     my_cursor = pygame.sprite.Sprite(all_sprites)
+    my_cursor_image = pygame.transform.scale(my_cursor_image, (60, 85))
     my_cursor.image = my_cursor_image
     my_cursor.rect = my_cursor.image.get_rect()
 
