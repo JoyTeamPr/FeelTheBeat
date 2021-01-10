@@ -19,8 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5d390fe-d1d4-474c-839c-129d984a10bd" name="Default Changelist" comment="cursor">
+    <list default="true" id="f5d390fe-d1d4-474c-839c-129d984a10bd" name="Default Changelist" comment="songs bruh duh">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/base.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/base.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/shop.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/shop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/shop.ui" beforeDir="false" afterPath="$PROJECT_DIR$/data/shop.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menu.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/menu.pyw" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,27 +86,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="SO.pyw" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Program Files\Python38\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SO.pyw" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main_start" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -146,13 +128,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="shop" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Program Files\Python38\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/shop.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.menu.pyw" />
+        <item itemvalue="Python.shop" />
         <item itemvalue="Python.main_start" />
         <item itemvalue="Python.DM.pyw" />
         <item itemvalue="Python.JBR.pyw" />
-        <item itemvalue="Python.SO.pyw" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +196,21 @@
       <option name="project" value="LOCAL" />
       <updated>1610280275567</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="duh">
+      <created>1610283882581</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1610283882581</updated>
+    </task>
+    <task id="LOCAL-00006" summary="songs bruh duh">
+      <created>1610284152261</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1610284152261</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -214,7 +231,9 @@
     <MESSAGE value="Amazing change1" />
     <MESSAGE value="Songs work!" />
     <MESSAGE value="cursor" />
-    <option name="LAST_COMMIT_MESSAGE" value="cursor" />
+    <MESSAGE value="duh" />
+    <MESSAGE value="songs bruh duh" />
+    <option name="LAST_COMMIT_MESSAGE" value="songs bruh duh" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609927268929">
@@ -233,42 +252,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1610115415226" />
-    <state width="1515" height="172" key="GridCell.Tab.0.bottom" timestamp="1610283811999">
+    <state width="1515" height="172" key="GridCell.Tab.0.bottom" timestamp="1610294381008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="172" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610283811999" />
+    <state width="1515" height="172" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610294381008" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610200801589" />
-    <state width="1515" height="172" key="GridCell.Tab.0.center" timestamp="1610283811999">
+    <state width="1515" height="172" key="GridCell.Tab.0.center" timestamp="1610294381008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="172" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610283811999" />
+    <state width="1515" height="172" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610294381008" />
     <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610200801588" />
-    <state width="1515" height="172" key="GridCell.Tab.0.left" timestamp="1610283811998">
+    <state width="1515" height="172" key="GridCell.Tab.0.left" timestamp="1610294381008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="172" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610283811998" />
+    <state width="1515" height="172" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610294381008" />
     <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610200801588" />
-    <state width="1515" height="172" key="GridCell.Tab.0.right" timestamp="1610283811999">
+    <state width="1515" height="172" key="GridCell.Tab.0.right" timestamp="1610294381008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="172" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610283811999" />
+    <state width="1515" height="172" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610294381008" />
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610200801588" />
-    <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1610209721145">
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1610285785603">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610209721145" />
-    <state width="1515" height="261" key="GridCell.Tab.1.center" timestamp="1610209721144">
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610285785603" />
+    <state width="1515" height="261" key="GridCell.Tab.1.center" timestamp="1610285785603">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610209721144" />
-    <state width="1515" height="261" key="GridCell.Tab.1.left" timestamp="1610209721144">
+    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610285785603" />
+    <state width="1515" height="261" key="GridCell.Tab.1.left" timestamp="1610285785603">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610209721144" />
-    <state width="1515" height="261" key="GridCell.Tab.1.right" timestamp="1610209721145">
+    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610285785603" />
+    <state width="1515" height="261" key="GridCell.Tab.1.right" timestamp="1610285785603">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610209721145" />
+    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610285785603" />
     <state x="147" y="64" key="MergeDialog" timestamp="1610187996515">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -281,15 +300,15 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="555" y="128" key="VCS.ChangeListViewerDialog/0.0.1536.824@0.0.1536.824" timestamp="1610179683795" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1610280279945">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1610284156939">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610280279945" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1610284156939" />
     <state x="451" y="183" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610199747279" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610282305509">
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610285761414">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1610282305509" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1610285761414" />
     <state x="733" y="411" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610200773322" />
   </component>
 </project>
