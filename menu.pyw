@@ -155,7 +155,7 @@ class DM:
                 clock = sql.execute(
                     """SELECT open FROM songs WHERE 
                     name = 'Dance Monkey'""").fetchone()
-                if clock == 1:
+                if clock[0] == 1:
                     os.startfile('DM.pyw')
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
@@ -174,7 +174,7 @@ class BG:
                 clock = sql.execute(
                     """SELECT open FROM songs WHERE 
                     name = 'Bad Guy'""").fetchone()
-                if clock == 1:
+                if clock[0] == 1:
                     os.startfile('BG.pyw')
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
@@ -194,7 +194,7 @@ class MSKWYDITD:
                     """SELECT open FROM songs WHERE 
                     name = 'My Songs Know What 
                     You Did In The Dark'""").fetchone()
-                if clock == 1:
+                if clock[0] == 1:
                     os.startfile('LEU.pyw')
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
@@ -213,7 +213,7 @@ class SNA:
                 clock = sql.execute(
                     """SELECT open FROM songs WHERE 
                     name = 'Seven Nation Army'""").fetchone()
-                if clock == 1:
+                if clock[0] == 1:
                     os.startfile('SNA.pyw')
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
@@ -232,7 +232,7 @@ class SO:
                 clock = sql.execute(
                     """SELECT open FROM songs WHERE 
                     name = 'Stressed Out'""").fetchone()
-                if clock == 1:
+                if clock[0] == 1:
                     os.startfile('SO.pyw')
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
@@ -261,7 +261,7 @@ class T:
                 clock = sql.execute(
                     """SELECT open FROM songs WHERE 
                     name = 'Thunder'""").fetchone()
-                if clock == 1:
+                if clock[0] == 1:
                     os.startfile('T.pyw')
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
@@ -280,7 +280,7 @@ class BL:
                 clock = sql.execute(
                     """SELECT open FROM songs WHERE 
                     name = 'Blinding Lights'""").fetchone()
-                if clock == 1:
+                if clock[0] == 1:
                     os.startfile('BL.pyw')
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
@@ -299,7 +299,7 @@ class RA:
                 clock = sql.execute(
                     """SELECT open FROM songs WHERE 
                     name = 'Runaway Baby'""").fetchone()
-                if clock == 1:
+                if clock[0] == 1:
                     os.startfile('RA.pyw')
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
