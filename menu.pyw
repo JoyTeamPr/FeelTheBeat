@@ -1,6 +1,7 @@
 import pygame
 import os
 import sys
+import sqlite3
 
 pygame.font.init()
 pygame.init()
@@ -197,7 +198,15 @@ class T:
     def click(self):
         if mouse_pos[0] in range(30, 215):
             if mouse_pos[1] in range(409, 510):
-                os.startfile('T.pyw')
+                db = sqlite3.connect('data/base.db')
+                sql = db.cursor()
+                clock = sql.execute(
+                    """SELECT open FROM songs WHERE 
+                    name = 'Thunder'""").fetchone()
+                if clock == 1:
+                    os.startfile('T.pyw')
+
+
 
 
 class BL:
@@ -260,6 +269,10 @@ class Exit:
                 pygame.quit()
 
 
+def except_hook(cls, exception, traceback):
+    sys.__excepthook__(cls, exception, traceback)
+
+
 if __name__ == '__main__':
     all_sprites = pygame.sprite.Group()
     clock = pygame.time.Clock()
@@ -272,7 +285,7 @@ if __name__ == '__main__':
     my_cursor.image = my_cursor_image
     my_cursor.rect = my_cursor.image.get_rect()
 
-    pygame.mouse.set_visible(True)
+    pygame.mouse.set_visible(False)
     running = True
     while running:
         for event in pygame.event.get():
@@ -304,4 +317,5 @@ if __name__ == '__main__':
         motion()
         pygame.display.flip()
         clock.tick(100)
+    sys.excepthook = except_hook
     pygame.quit()
