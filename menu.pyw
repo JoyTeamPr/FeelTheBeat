@@ -82,7 +82,7 @@ def motion():
             all_sprites.draw(screen)
 
     elif mouse_pos[0] in range(32, 213):
-        if mouse_pos[1] in range(274, 372):
+        if mouse_pos[1] in range(370, 272):
             flag = True
             if flag:
                 pygame.draw.rect(screen, (255, 255, 255),
@@ -262,8 +262,16 @@ class Exit:
 
 if __name__ == '__main__':
     all_sprites = pygame.sprite.Group()
-    background = BackGround()
     clock = pygame.time.Clock()
+
+    all_sprites = pygame.sprite.Group()
+    BackGround()
+    my_cursor_image = load_image('arrow1.png')
+    my_cursor = pygame.sprite.Sprite(all_sprites)
+    my_cursor.image = my_cursor_image
+    my_cursor.rect = my_cursor.image.get_rect()
+
+    pygame.mouse.set_visible(True)
     running = True
     while running:
         for event in pygame.event.get():
@@ -271,7 +279,11 @@ if __name__ == '__main__':
                 running = False
             if event.type == pygame.MOUSEMOTION:
                 mouse_pos = pygame.mouse.get_pos()
+                my_cursor.rect.topleft = event.pos
                 print(mouse_pos)
+            if pygame.mouse.get_focused():
+                all_sprites.draw(screen)
+            all_sprites.update()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 JBR.click('')
                 AOBTD.click('')

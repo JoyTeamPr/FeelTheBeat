@@ -4,7 +4,7 @@ import time
 import os
 
 pygame.init()
-size = 540, 960
+size = 360, 640
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption('Feel the beat')
 pygame.display.set_icon(pygame.image.load('data/note.png'))
@@ -29,7 +29,7 @@ def load_image(name, colorkey=None):
 
 class BackGround(pygame.sprite.Sprite):
     image = load_image('load.jpg')
-    image = pygame.transform.scale(image, (540, 960))
+    image = pygame.transform.scale(image, (360, 640))
 
     def __init__(self):
         super().__init__(all_sprites)
@@ -50,7 +50,7 @@ if __name__ == '__main__':
         a += 1
         pygame.display.flip()
         clock.tick(100)
-        if a == 200:
+        if a == 250:
             running = False
     os.startfile('menu.pyw')
     pygame.quit()

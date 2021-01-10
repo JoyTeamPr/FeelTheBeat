@@ -128,7 +128,7 @@ if __name__ == '__main__':
             for j in range(700 // (5 * speed)):
                 time_ += 1 / delta
                 clock.tick(delta)
-                screen.fill((224, 224, 255))
+                screen.fill((255, 84, 61))
                 if lost != 0:
                     break
                 for k in range(len(sb)):
