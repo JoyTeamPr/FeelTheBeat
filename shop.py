@@ -28,25 +28,25 @@ class Ui_mainWindow(object):
         self.label.setMinimumSize(QtCore.QSize(898, 641))
         self.label.setMaximumSize(QtCore.QSize(898, 650))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("background.png"))
+        self.label.setPixmap(QtGui.QPixmap("data/background.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(0, 0, 891, 651))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("background1.png"))
+        self.label_2.setPixmap(QtGui.QPixmap("data/background1.png"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         self.label_3.setGeometry(QtCore.QRect(0, 100, 901, 61))
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("shelf.png"))
+        self.label_3.setPixmap(QtGui.QPixmap("data/shelf.png"))
         self.label_3.setScaledContents(True)
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
         self.label_4.setGeometry(QtCore.QRect(0, 310, 901, 61))
         self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap("shelf.png"))
+        self.label_4.setPixmap(QtGui.QPixmap("data/shelf.png"))
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
@@ -73,14 +73,14 @@ class Ui_mainWindow(object):
         self.heart1.setGeometry(QtCore.QRect(290, 120, 41, 91))
         self.heart1.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.heart1.setText("")
-        self.heart1.setPixmap(QtGui.QPixmap("price.png"))
+        self.heart1.setPixmap(QtGui.QPixmap("data/price.png"))
         self.heart1.setScaledContents(True)
         self.heart1.setObjectName("heart1")
         self.heart_all = QtWidgets.QLabel(self.centralwidget)
         self.heart_all.setGeometry(QtCore.QRect(550, 120, 51, 91))
         self.heart_all.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.heart_all.setText("")
-        self.heart_all.setPixmap(QtGui.QPixmap("price.png"))
+        self.heart_all.setPixmap(QtGui.QPixmap("data/price.png"))
         self.heart_all.setScaledContents(True)
         self.heart_all.setObjectName("heart_all")
         self.heart1_price = QtWidgets.QLabel(self.centralwidget)
@@ -98,13 +98,13 @@ class Ui_mainWindow(object):
         self.label_9 = QtWidgets.QLabel(self.centralwidget)
         self.label_9.setGeometry(QtCore.QRect(270, 60, 71, 51))
         self.label_9.setText("")
-        self.label_9.setPixmap(QtGui.QPixmap("heart.png"))
+        self.label_9.setPixmap(QtGui.QPixmap("data/heart.png"))
         self.label_9.setScaledContents(True)
         self.label_9.setObjectName("label_9")
         self.label_11 = QtWidgets.QLabel(self.centralwidget)
         self.label_11.setGeometry(QtCore.QRect(536, 60, 71, 51))
         self.label_11.setText("")
-        self.label_11.setPixmap(QtGui.QPixmap("heart.png"))
+        self.label_11.setPixmap(QtGui.QPixmap("data/heart.png"))
         self.label_11.setScaledContents(True)
         self.label_11.setObjectName("label_11")
         self.heart_all_price = QtWidgets.QLabel(self.centralwidget)
@@ -166,105 +166,105 @@ class Ui_mainWindow(object):
         self.label_19 = QtWidgets.QLabel(self.centralwidget)
         self.label_19.setGeometry(QtCore.QRect(548, 260, 91, 71))
         self.label_19.setText("")
-        self.label_19.setPixmap(QtGui.QPixmap("Screenshot_4.png"))
+        self.label_19.setPixmap(QtGui.QPixmap("data/Screenshot_4.png"))
         self.label_19.setScaledContents(True)
         self.label_19.setObjectName("label_19")
         self.label_20 = QtWidgets.QLabel(self.centralwidget)
         self.label_20.setGeometry(QtCore.QRect(70, 260, 91, 71))
         self.label_20.setText("")
-        self.label_20.setPixmap(QtGui.QPixmap("Screenshot_5.png"))
+        self.label_20.setPixmap(QtGui.QPixmap("data/Screenshot_5.png"))
         self.label_20.setScaledContents(True)
         self.label_20.setObjectName("label_20")
         self.label_21 = QtWidgets.QLabel(self.centralwidget)
         self.label_21.setGeometry(QtCore.QRect(645, 260, 91, 71))
         self.label_21.setText("")
-        self.label_21.setPixmap(QtGui.QPixmap("Screenshot_6.png"))
+        self.label_21.setPixmap(QtGui.QPixmap("data/Screenshot_6.png"))
         self.label_21.setScaledContents(True)
         self.label_21.setObjectName("label_21")
         self.label_22 = QtWidgets.QLabel(self.centralwidget)
         self.label_22.setGeometry(QtCore.QRect(453, 260, 91, 71))
         self.label_22.setText("")
-        self.label_22.setPixmap(QtGui.QPixmap("Screenshot_7.png"))
+        self.label_22.setPixmap(QtGui.QPixmap("data/Screenshot_7.png"))
         self.label_22.setScaledContents(True)
         self.label_22.setObjectName("label_22")
         self.label_23 = QtWidgets.QLabel(self.centralwidget)
         self.label_23.setGeometry(QtCore.QRect(167, 260, 91, 71))
         self.label_23.setText("")
-        self.label_23.setPixmap(QtGui.QPixmap("Screenshot_8.png"))
+        self.label_23.setPixmap(QtGui.QPixmap("data/Screenshot_8.png"))
         self.label_23.setScaledContents(True)
         self.label_23.setObjectName("label_23")
         self.label_25 = QtWidgets.QLabel(self.centralwidget)
         self.label_25.setGeometry(QtCore.QRect(358, 260, 91, 71))
         self.label_25.setText("")
-        self.label_25.setPixmap(QtGui.QPixmap("Screenshot_10.png"))
+        self.label_25.setPixmap(QtGui.QPixmap("data/Screenshot_10.png"))
         self.label_25.setScaledContents(True)
         self.label_25.setObjectName("label_25")
         self.label_26 = QtWidgets.QLabel(self.centralwidget)
         self.label_26.setGeometry(QtCore.QRect(262, 260, 91, 71))
         self.label_26.setText("")
-        self.label_26.setPixmap(QtGui.QPixmap("Screenshot_11.png"))
+        self.label_26.setPixmap(QtGui.QPixmap("data/Screenshot_11.png"))
         self.label_26.setScaledContents(True)
         self.label_26.setObjectName("label_26")
         self.label_27 = QtWidgets.QLabel(self.centralwidget)
         self.label_27.setGeometry(QtCore.QRect(740, 260, 91, 71))
         self.label_27.setText("")
-        self.label_27.setPixmap(QtGui.QPixmap("Screenshot_12.png"))
+        self.label_27.setPixmap(QtGui.QPixmap("data/Screenshot_12.png"))
         self.label_27.setScaledContents(True)
         self.label_27.setObjectName("label_27")
         self.BG = QtWidgets.QLabel(self.centralwidget)
         self.BG.setGeometry(QtCore.QRect(90, 330, 51, 91))
         self.BG.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.BG.setText("")
-        self.BG.setPixmap(QtGui.QPixmap("price.png"))
+        self.BG.setPixmap(QtGui.QPixmap("data/price.png"))
         self.BG.setScaledContents(True)
         self.BG.setObjectName("BG")
         self.SO = QtWidgets.QLabel(self.centralwidget)
         self.SO.setGeometry(QtCore.QRect(190, 330, 51, 91))
         self.SO.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.SO.setText("")
-        self.SO.setPixmap(QtGui.QPixmap("price.png"))
+        self.SO.setPixmap(QtGui.QPixmap("data/price.png"))
         self.SO.setScaledContents(True)
         self.SO.setObjectName("SO")
         self.BL = QtWidgets.QLabel(self.centralwidget)
         self.BL.setGeometry(QtCore.QRect(280, 330, 51, 91))
         self.BL.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.BL.setText("")
-        self.BL.setPixmap(QtGui.QPixmap("price.png"))
+        self.BL.setPixmap(QtGui.QPixmap("data/price.png"))
         self.BL.setScaledContents(True)
         self.BL.setObjectName("BL")
         self.RB = QtWidgets.QLabel(self.centralwidget)
         self.RB.setGeometry(QtCore.QRect(380, 330, 51, 91))
         self.RB.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.RB.setText("")
-        self.RB.setPixmap(QtGui.QPixmap("price.png"))
+        self.RB.setPixmap(QtGui.QPixmap("data/price.png"))
         self.RB.setScaledContents(True)
         self.RB.setObjectName("RB")
         self.SNA = QtWidgets.QLabel(self.centralwidget)
         self.SNA.setGeometry(QtCore.QRect(480, 330, 51, 91))
         self.SNA.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.SNA.setText("")
-        self.SNA.setPixmap(QtGui.QPixmap("price.png"))
+        self.SNA.setPixmap(QtGui.QPixmap("data/price.png"))
         self.SNA.setScaledContents(True)
         self.SNA.setObjectName("SNA")
         self.DM = QtWidgets.QLabel(self.centralwidget)
         self.DM.setGeometry(QtCore.QRect(570, 330, 51, 91))
         self.DM.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.DM.setText("")
-        self.DM.setPixmap(QtGui.QPixmap("price.png"))
+        self.DM.setPixmap(QtGui.QPixmap("data/price.png"))
         self.DM.setScaledContents(True)
         self.DM.setObjectName("DM")
         self.LEU = QtWidgets.QLabel(self.centralwidget)
         self.LEU.setGeometry(QtCore.QRect(670, 330, 51, 91))
         self.LEU.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.LEU.setText("")
-        self.LEU.setPixmap(QtGui.QPixmap("price.png"))
+        self.LEU.setPixmap(QtGui.QPixmap("data/price.png"))
         self.LEU.setScaledContents(True)
         self.LEU.setObjectName("LEU")
         self.T = QtWidgets.QLabel(self.centralwidget)
         self.T.setGeometry(QtCore.QRect(770, 330, 51, 91))
         self.T.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.T.setText("")
-        self.T.setPixmap(QtGui.QPixmap("price.png"))
+        self.T.setPixmap(QtGui.QPixmap("data/price.png"))
         self.T.setScaledContents(True)
         self.T.setObjectName("T")
         self.BG_price = QtWidgets.QLabel(self.centralwidget)
@@ -516,13 +516,13 @@ class Ui_mainWindow(object):
         self.SNA_price.setText(_translate("mainWindow", "250"))
 
     def DM_buying(self):
-        db = sqlite3.connect('base.db')
+        db = sqlite3.connect('data/base.db')
         sql = db.cursor()
         clock = sql.execute(
             """SELECT open FROM songs WHERE 
             name = 'Dance Monkey'""").fetchone()
         if clock[0] == 1 or clock[0] == '1':
-            a = load_sound('песня_закрыта.mp3')
+            a = load_sound('data/песня_закрыта.mp3')
             a.play()
         else:
             money = sql.execute(
@@ -533,24 +533,24 @@ class Ui_mainWindow(object):
                 a -= 500
                 sql.execute(f'UPDATE data SET money = {a}')
                 self.money.setText(str(a))
-                a = load_sound('покупка.mp3')
+                a = load_sound('data/покупка.mp3')
                 a.play()
                 sql.execute(
                     """UPDATE songs SET open = 1
                      WHERE name = 'Dance Monkey' """)
                 db.commit()
             else:
-                a = load_sound('песня_закрыта.mp3')
+                a = load_sound('data/песня_закрыта.mp3')
                 a.play()
 
     def T_buying(self):
-        db = sqlite3.connect('base.db')
+        db = sqlite3.connect('data/base.db')
         sql = db.cursor()
         clock = sql.execute(
             """SELECT open FROM songs WHERE 
             name = 'Thunder'""").fetchone()
         if clock[0] == 1 or clock[0] == '1':
-            a = load_sound('песня_закрыта.mp3')
+            a = load_sound('data/песня_закрыта.mp3')
             a.play()
         else:
             money = sql.execute(
@@ -561,24 +561,24 @@ class Ui_mainWindow(object):
                 a -= 250
                 sql.execute(f'UPDATE data SET money = {a}')
                 self.money.setText(str(a))
-                a = load_sound('покупка.mp3')
+                a = load_sound('data/покупка.mp3')
                 a.play()
                 sql.execute(
                     """UPDATE songs SET open = 1
                      WHERE name = 'Thunder' """)
                 db.commit()
             else:
-                a = load_sound('песня_закрыта.mp3')
+                a = load_sound('data/песня_закрыта.mp3')
                 a.play()
 
     def SO_buying(self):
-        db = sqlite3.connect('base.db')
+        db = sqlite3.connect('data/base.db')
         sql = db.cursor()
         clock = sql.execute(
             """SELECT open FROM songs WHERE 
             name = 'Stressed Out'""").fetchone()
         if clock[0] == 1 or clock[0] == '1':
-            a = load_sound('песня_закрыта.mp3')
+            a = load_sound('data/песня_закрыта.mp3')
             a.play()
         else:
             money = sql.execute(
@@ -589,24 +589,24 @@ class Ui_mainWindow(object):
                 a -= 100
                 sql.execute(f'UPDATE data SET money = {a}')
                 self.money.setText(str(a))
-                a = load_sound('покупка.mp3')
+                a = load_sound('data/покупка.mp3')
                 a.play()
                 sql.execute(
                     """UPDATE songs SET open = 1
                      WHERE name = 'Stressed Out' """)
                 db.commit()
             else:
-                a = load_sound('песня_закрыта.mp3')
+                a = load_sound('data/песня_закрыта.mp3')
                 a.play()
 
     def BG_buying(self):
-        db = sqlite3.connect('base.db')
+        db = sqlite3.connect('data/base.db')
         sql = db.cursor()
         clock = sql.execute(
             """SELECT open FROM songs WHERE 
             name = 'Bad Guy'""").fetchone()
         if clock[0] == 1 or clock[0] == '1':
-            a = load_sound('песня_закрыта.mp3')
+            a = load_sound('data/песня_закрыта.mp3')
             a.play()
         else:
             money = sql.execute(
@@ -617,24 +617,24 @@ class Ui_mainWindow(object):
                 a -= 200
                 sql.execute(f'UPDATE data SET money = {a}')
                 self.money.setText(str(a))
-                a = load_sound('покупка.mp3')
+                a = load_sound('data/покупка.mp3')
                 a.play()
                 sql.execute(
                     """UPDATE songs SET open = 1
                      WHERE name = 'Bad Guy' """)
                 db.commit()
             else:
-                a = load_sound('песня_закрыта.mp3')
+                a = load_sound('data/песня_закрыта.mp3')
                 a.play()
 
     def BL_buying(self):
-        db = sqlite3.connect('base.db')
+        db = sqlite3.connect('data/base.db')
         sql = db.cursor()
         clock = sql.execute(
             """SELECT open FROM songs WHERE 
             name = 'Blinding Lights'""").fetchone()
         if clock[0] == 1 or clock[0] == '1':
-            a = load_sound('песня_закрыта.mp3')
+            a = load_sound('data/песня_закрыта.mp3')
             a.play()
         else:
             money = sql.execute(
@@ -645,24 +645,24 @@ class Ui_mainWindow(object):
                 a -= 400
                 sql.execute(f'UPDATE data SET money = {a}')
                 self.money.setText(str(a))
-                a = load_sound('покупка.mp3')
+                a = load_sound('data/покупка.mp3')
                 a.play()
                 sql.execute(
                     """UPDATE songs SET open = 1
                      WHERE name = 'Blinding Lights' """)
                 db.commit()
             else:
-                a = load_sound('песня_закрыта.mp3')
+                a = load_sound('data/песня_закрыта.mp3')
                 a.play()
 
     def RB_buying(self):
-        db = sqlite3.connect('base.db')
+        db = sqlite3.connect('data/base.db')
         sql = db.cursor()
         clock = sql.execute(
             """SELECT open FROM songs WHERE 
             name = 'Runaway Baby'""").fetchone()
         if clock[0] == 1 or clock[0] == '1':
-            a = load_sound('песня_закрыта.mp3')
+            a = load_sound('data/песня_закрыта.mp3')
             a.play()
         else:
             money = sql.execute(
@@ -673,24 +673,24 @@ class Ui_mainWindow(object):
                 a -= 400
                 sql.execute(f'UPDATE data SET money = {a}')
                 self.money.setText(str(a))
-                a = load_sound('покупка.mp3')
+                a = load_sound('data/покупка.mp3')
                 a.play()
                 sql.execute(
                     """UPDATE songs SET open = 1
                      WHERE name = 'Runaway Baby' """)
                 db.commit()
             else:
-                a = load_sound('песня_закрыта.mp3')
+                a = load_sound('data/песня_закрыта.mp3')
                 a.play()
 
     def SNA_buying(self):
-        db = sqlite3.connect('base.db')
+        db = sqlite3.connect('data/base.db')
         sql = db.cursor()
         clock = sql.execute(
             """SELECT open FROM songs WHERE 
             name = 'Seven Nation Army'""").fetchone()
         if clock[0] == 1 or clock[0] == '1':
-            a = load_sound('песня_закрыта.mp3')
+            a = load_sound('data/песня_закрыта.mp3')
             a.play()
         else:
             money = sql.execute(
@@ -701,24 +701,24 @@ class Ui_mainWindow(object):
                 a -= 250
                 sql.execute(f'UPDATE data SET money = {a}')
                 self.money.setText(str(a))
-                a = load_sound('покупка.mp3')
+                a = load_sound('data/покупка.mp3')
                 a.play()
                 sql.execute(
                     """UPDATE songs SET open = 1
                      WHERE name = 'Seven Nation Army' """)
                 db.commit()
             else:
-                a = load_sound('песня_закрыта.mp3')
+                a = load_sound('data/песня_закрыта.mp3')
                 a.play()
 
     def LEU_buying(self):
-        db = sqlite3.connect('base.db')
+        db = sqlite3.connect('data/base.db')
         sql = db.cursor()
         clock = sql.execute(
             """SELECT open FROM songs WHERE 
             name = 'My Songs Know What You Did In The Dark'""").fetchone()
         if clock[0] == 1 or clock[0] == '1':
-            a = load_sound('песня_закрыта.mp3')
+            a = load_sound('data/песня_закрыта.mp3')
             a.play()
         else:
             money = sql.execute(
@@ -729,18 +729,18 @@ class Ui_mainWindow(object):
                 a -= 450
                 sql.execute(f'UPDATE data SET money = {a}')
                 self.money.setText(str(a))
-                a = load_sound('покупка.mp3')
+                a = load_sound('data/покупка.mp3')
                 a.play()
                 sql.execute(
                     """UPDATE songs SET open = 1
                      WHERE name = 'My Songs Know What You Did In The Dark' """)
                 db.commit()
             else:
-                a = load_sound('песня_закрыта.mp3')
+                a = load_sound('data/песня_закрыта.mp3')
                 a.play()
 
     def lives_buying(self):
-        db = sqlite3.connect('base.db')
+        db = sqlite3.connect('data/base.db')
         sql = db.cursor()
 
         money = sql.execute(
@@ -757,14 +757,14 @@ class Ui_mainWindow(object):
             sql.execute(f'UPDATE data SET lives = {b}')
             db.commit()
             self.money.setText(str(a))
-            a = load_sound('покупка.mp3')
+            a = load_sound('data/покупка.mp3')
             a.play()
         else:
-            a = load_sound('песня_закрыта.mp3')
+            a = load_sound('data/песня_закрыта.mp3')
             a.play()
 
     def alllives_buying(self):
-        db = sqlite3.connect('base.db')
+        db = sqlite3.connect('data/base.db')
         sql = db.cursor()
 
         money = sql.execute(
@@ -781,10 +781,10 @@ class Ui_mainWindow(object):
             sql.execute(f'UPDATE data SET lives = {b}')
             db.commit()
             self.money.setText(str(a))
-            a = load_sound('покупка.mp3')
+            a = load_sound('data/покупка.mp3')
             a.play()
         else:
-            a = load_sound('песня_закрыта.mp3')
+            a = load_sound('data/песня_закрыта.mp3')
             a.play()
 
     def buy_connect(self):
