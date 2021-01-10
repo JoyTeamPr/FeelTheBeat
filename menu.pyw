@@ -4,6 +4,7 @@ import sqlite3
 import sys
 import sqlite3
 
+
 pygame.font.init()
 pygame.init()
 size = 1000, 700
@@ -322,7 +323,7 @@ class Shop:
     def click(self):
         if mouse_pos[0] in range(273, 385):
             if mouse_pos[1] in range(610, 700):
-                os.startfile('shop.pyw')
+                os.startfile('shop.py')
 
 
 class Settings:

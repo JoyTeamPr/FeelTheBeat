@@ -1,8 +1,20 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QIcon
+import pygame
+import sqlite3
 
 
-class Ui_mainWindow1(object):
+def load_sound(name):
+    pygame.mixer.init()
+    if not pygame.mixer or not pygame.mixer.get_init():
+        pass
+    try:
+        sound = pygame.mixer.Sound(name)
+    except pygame.error:
+        print(f'Файл со звуком "{sound}" не найден')
+    return sound
+
+
+class Ui_mainWindow(object):
     def setupUi(self, mainWindow):
         mainWindow.setObjectName("mainWindow")
         mainWindow.resize(888, 650)
@@ -343,6 +355,92 @@ class Ui_mainWindow1(object):
         self.SNA_price.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.SNA_price.setStyleSheet("color: rgb(255, 0, 0);")
         self.SNA_price.setObjectName("SNA_price")
+        self.BUY_BG = QtWidgets.QPushButton(self.centralwidget)
+        self.BUY_BG.setGeometry(QtCore.QRect(100, 370, 31, 51))
+        self.BUY_BG.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.BUY_BG.setStyleSheet("background-color: rgba(255, 255, 255, 0);\n"
+                                  "")
+        self.BUY_BG.setText("")
+        self.BUY_BG.setCheckable(False)
+        self.BUY_BG.setFlat(True)
+        self.BUY_BG.setObjectName("BUY_BG")
+        self.BUY_SO = QtWidgets.QPushButton(self.centralwidget)
+        self.BUY_SO.setGeometry(QtCore.QRect(200, 370, 31, 51))
+        self.BUY_SO.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.BUY_SO.setStyleSheet("background-color: rgba(255, 255, 255, 0);\n"
+                                  "")
+        self.BUY_SO.setText("")
+        self.BUY_SO.setFlat(True)
+        self.BUY_SO.setObjectName("BUY_SO")
+        self.BUY_BL = QtWidgets.QPushButton(self.centralwidget)
+        self.BUY_BL.setGeometry(QtCore.QRect(290, 370, 31, 51))
+        self.BUY_BL.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.BUY_BL.setStyleSheet("background-color: rgba(255, 255, 255, 0);\n"
+                                  "")
+        self.BUY_BL.setText("")
+        self.BUY_BL.setFlat(True)
+        self.BUY_BL.setObjectName("BUY_BL")
+        self.BUY_RB = QtWidgets.QPushButton(self.centralwidget)
+        self.BUY_RB.setGeometry(QtCore.QRect(390, 370, 31, 51))
+        self.BUY_RB.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.BUY_RB.setStyleSheet("background-color: rgba(255, 255, 255, 0);\n"
+                                  "")
+        self.BUY_RB.setText("")
+        self.BUY_RB.setFlat(True)
+        self.BUY_RB.setObjectName("BUY_RB")
+        self.BUY_SNA = QtWidgets.QPushButton(self.centralwidget)
+        self.BUY_SNA.setGeometry(QtCore.QRect(490, 370, 31, 51))
+        self.BUY_SNA.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.BUY_SNA.setStyleSheet(
+            "background-color: rgba(255, 255, 255, 0);\n"
+            "")
+        self.BUY_SNA.setText("")
+        self.BUY_SNA.setFlat(True)
+        self.BUY_SNA.setObjectName("BUY_SNA")
+        self.BUY_DM = QtWidgets.QPushButton(self.centralwidget)
+        self.BUY_DM.setGeometry(QtCore.QRect(580, 370, 31, 51))
+        self.BUY_DM.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.BUY_DM.setStyleSheet("background-color: rgba(255, 255, 255, 0);\n"
+                                  "")
+        self.BUY_DM.setText("")
+        self.BUY_DM.setFlat(True)
+        self.BUY_DM.setObjectName("BUY_DM")
+        self.BUY_LEU = QtWidgets.QPushButton(self.centralwidget)
+        self.BUY_LEU.setGeometry(QtCore.QRect(680, 370, 31, 51))
+        self.BUY_LEU.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.BUY_LEU.setStyleSheet(
+            "background-color: rgba(255, 255, 255, 0);\n"
+            "")
+        self.BUY_LEU.setText("")
+        self.BUY_LEU.setFlat(True)
+        self.BUY_LEU.setObjectName("BUY_LEU")
+        self.BUY_T = QtWidgets.QPushButton(self.centralwidget)
+        self.BUY_T.setGeometry(QtCore.QRect(780, 370, 31, 51))
+        self.BUY_T.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.BUY_T.setStyleSheet("background-color: rgba(255, 255, 255, 0);\n"
+                                 "")
+        self.BUY_T.setText("")
+        self.BUY_T.setFlat(True)
+        self.BUY_T.setObjectName("BUY_T")
+        self.BUY_HEART1 = QtWidgets.QPushButton(self.centralwidget)
+        self.BUY_HEART1.setGeometry(QtCore.QRect(295, 160, 31, 51))
+        self.BUY_HEART1.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.BUY_HEART1.setStyleSheet(
+            "background-color: rgba(255, 255, 255, 0);\n"
+            "")
+        self.BUY_HEART1.setText("")
+        self.BUY_HEART1.setFlat(True)
+        self.BUY_HEART1.setObjectName("BUY_HEART1")
+        self.BUY_HEARTALL = QtWidgets.QPushButton(self.centralwidget)
+        self.BUY_HEARTALL.setGeometry(QtCore.QRect(560, 160, 31, 51))
+        self.BUY_HEARTALL.setCursor(
+            QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.BUY_HEARTALL.setStyleSheet(
+            "background-color: rgba(255, 255, 255, 0);\n"
+            "")
+        self.BUY_HEARTALL.setText("")
+        self.BUY_HEARTALL.setFlat(True)
+        self.BUY_HEARTALL.setObjectName("BUY_HEARTALL")
         self.label_2.raise_()
         self.label.raise_()
         self.label_3.raise_()
@@ -383,12 +481,22 @@ class Ui_mainWindow1(object):
         self.RB_price.raise_()
         self.T_price.raise_()
         self.SNA_price.raise_()
+        self.BUY_BG.raise_()
+        self.BUY_SO.raise_()
+        self.BUY_BL.raise_()
+        self.BUY_RB.raise_()
+        self.BUY_SNA.raise_()
+        self.BUY_DM.raise_()
+        self.BUY_LEU.raise_()
+        self.BUY_T.raise_()
+        self.BUY_HEART1.raise_()
+        self.BUY_HEARTALL.raise_()
         mainWindow.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi1(mainWindow)
+        self.retranslateUi(mainWindow)
         QtCore.QMetaObject.connectSlotsByName(mainWindow)
 
-    def retranslateUi1(self, mainWindow):
+    def retranslateUi(self, mainWindow):
         _translate = QtCore.QCoreApplication.translate
         mainWindow.setWindowTitle(_translate("mainWindow", "Магазин"))
         self.label_5.setText(_translate("mainWindow", "ЖИЗНИ "))
@@ -407,14 +515,303 @@ class Ui_mainWindow1(object):
         self.T_price.setText(_translate("mainWindow", "250"))
         self.SNA_price.setText(_translate("mainWindow", "250"))
 
+    def DM_buying(self):
+        db = sqlite3.connect('base.db')
+        sql = db.cursor()
+        clock = sql.execute(
+            """SELECT open FROM songs WHERE 
+            name = 'Dance Monkey'""").fetchone()
+        if clock[0] == 1 or clock[0] == '1':
+            a = load_sound('песня_закрыта.mp3')
+            a.play()
+        else:
+            money = sql.execute(
+                """SELECT money FROM data""").fetchone()
+            if money[0] >= 500:
+                a = money[0]
+                self.money.setText(str(a))
+                a -= 500
+                sql.execute(f'UPDATE data SET money = {a}')
+                self.money.setText(str(a))
+                a = load_sound('покупка.mp3')
+                a.play()
+                sql.execute(
+                    """UPDATE songs SET open = 1
+                     WHERE name = 'Dance Monkey' """)
+                db.commit()
+            else:
+                a = load_sound('песня_закрыта.mp3')
+                a.play()
+
+    def T_buying(self):
+        db = sqlite3.connect('base.db')
+        sql = db.cursor()
+        clock = sql.execute(
+            """SELECT open FROM songs WHERE 
+            name = 'Thunder'""").fetchone()
+        if clock[0] == 1 or clock[0] == '1':
+            a = load_sound('песня_закрыта.mp3')
+            a.play()
+        else:
+            money = sql.execute(
+                """SELECT money FROM data""").fetchone()
+            if money[0] >= 250:
+                a = money[0]
+                self.money.setText(str(a))
+                a -= 250
+                sql.execute(f'UPDATE data SET money = {a}')
+                self.money.setText(str(a))
+                a = load_sound('покупка.mp3')
+                a.play()
+                sql.execute(
+                    """UPDATE songs SET open = 1
+                     WHERE name = 'Thunder' """)
+                db.commit()
+            else:
+                a = load_sound('песня_закрыта.mp3')
+                a.play()
+
+    def SO_buying(self):
+        db = sqlite3.connect('base.db')
+        sql = db.cursor()
+        clock = sql.execute(
+            """SELECT open FROM songs WHERE 
+            name = 'Stressed Out'""").fetchone()
+        if clock[0] == 1 or clock[0] == '1':
+            a = load_sound('песня_закрыта.mp3')
+            a.play()
+        else:
+            money = sql.execute(
+                """SELECT money FROM data""").fetchone()
+            if money[0] >= 100:
+                a = money[0]
+                self.money.setText(str(a))
+                a -= 100
+                sql.execute(f'UPDATE data SET money = {a}')
+                self.money.setText(str(a))
+                a = load_sound('покупка.mp3')
+                a.play()
+                sql.execute(
+                    """UPDATE songs SET open = 1
+                     WHERE name = 'Stressed Out' """)
+                db.commit()
+            else:
+                a = load_sound('песня_закрыта.mp3')
+                a.play()
+
+    def BG_buying(self):
+        db = sqlite3.connect('base.db')
+        sql = db.cursor()
+        clock = sql.execute(
+            """SELECT open FROM songs WHERE 
+            name = 'Bad Guy'""").fetchone()
+        if clock[0] == 1 or clock[0] == '1':
+            a = load_sound('песня_закрыта.mp3')
+            a.play()
+        else:
+            money = sql.execute(
+                """SELECT money FROM data""").fetchone()
+            if money[0] >= 200:
+                a = money[0]
+                self.money.setText(str(a))
+                a -= 200
+                sql.execute(f'UPDATE data SET money = {a}')
+                self.money.setText(str(a))
+                a = load_sound('покупка.mp3')
+                a.play()
+                sql.execute(
+                    """UPDATE songs SET open = 1
+                     WHERE name = 'Bad Guy' """)
+                db.commit()
+            else:
+                a = load_sound('песня_закрыта.mp3')
+                a.play()
+
+    def BL_buying(self):
+        db = sqlite3.connect('base.db')
+        sql = db.cursor()
+        clock = sql.execute(
+            """SELECT open FROM songs WHERE 
+            name = 'Blinding Lights'""").fetchone()
+        if clock[0] == 1 or clock[0] == '1':
+            a = load_sound('песня_закрыта.mp3')
+            a.play()
+        else:
+            money = sql.execute(
+                """SELECT money FROM data""").fetchone()
+            if money[0] >= 400:
+                a = money[0]
+                self.money.setText(str(a))
+                a -= 400
+                sql.execute(f'UPDATE data SET money = {a}')
+                self.money.setText(str(a))
+                a = load_sound('покупка.mp3')
+                a.play()
+                sql.execute(
+                    """UPDATE songs SET open = 1
+                     WHERE name = 'Blinding Lights' """)
+                db.commit()
+            else:
+                a = load_sound('песня_закрыта.mp3')
+                a.play()
+
+    def RB_buying(self):
+        db = sqlite3.connect('base.db')
+        sql = db.cursor()
+        clock = sql.execute(
+            """SELECT open FROM songs WHERE 
+            name = 'Runaway Baby'""").fetchone()
+        if clock[0] == 1 or clock[0] == '1':
+            a = load_sound('песня_закрыта.mp3')
+            a.play()
+        else:
+            money = sql.execute(
+                """SELECT money FROM data""").fetchone()
+            if money[0] >= 400:
+                a = money[0]
+                self.money.setText(str(a))
+                a -= 400
+                sql.execute(f'UPDATE data SET money = {a}')
+                self.money.setText(str(a))
+                a = load_sound('покупка.mp3')
+                a.play()
+                sql.execute(
+                    """UPDATE songs SET open = 1
+                     WHERE name = 'Runaway Baby' """)
+                db.commit()
+            else:
+                a = load_sound('песня_закрыта.mp3')
+                a.play()
+
+    def SNA_buying(self):
+        db = sqlite3.connect('base.db')
+        sql = db.cursor()
+        clock = sql.execute(
+            """SELECT open FROM songs WHERE 
+            name = 'Seven Nation Army'""").fetchone()
+        if clock[0] == 1 or clock[0] == '1':
+            a = load_sound('песня_закрыта.mp3')
+            a.play()
+        else:
+            money = sql.execute(
+                """SELECT money FROM data""").fetchone()
+            if money[0] >= 250:
+                a = money[0]
+                self.money.setText(str(a))
+                a -= 250
+                sql.execute(f'UPDATE data SET money = {a}')
+                self.money.setText(str(a))
+                a = load_sound('покупка.mp3')
+                a.play()
+                sql.execute(
+                    """UPDATE songs SET open = 1
+                     WHERE name = 'Seven Nation Army' """)
+                db.commit()
+            else:
+                a = load_sound('песня_закрыта.mp3')
+                a.play()
+
+    def LEU_buying(self):
+        db = sqlite3.connect('base.db')
+        sql = db.cursor()
+        clock = sql.execute(
+            """SELECT open FROM songs WHERE 
+            name = 'My Songs Know What You Did In The Dark'""").fetchone()
+        if clock[0] == 1 or clock[0] == '1':
+            a = load_sound('песня_закрыта.mp3')
+            a.play()
+        else:
+            money = sql.execute(
+                """SELECT money FROM data""").fetchone()
+            if money[0] >= 450:
+                a = money[0]
+                self.money.setText(str(a))
+                a -= 450
+                sql.execute(f'UPDATE data SET money = {a}')
+                self.money.setText(str(a))
+                a = load_sound('покупка.mp3')
+                a.play()
+                sql.execute(
+                    """UPDATE songs SET open = 1
+                     WHERE name = 'My Songs Know What You Did In The Dark' """)
+                db.commit()
+            else:
+                a = load_sound('песня_закрыта.mp3')
+                a.play()
+
+    def lives_buying(self):
+        db = sqlite3.connect('base.db')
+        sql = db.cursor()
+
+        money = sql.execute(
+            """SELECT money FROM data""").fetchone()
+        lives = sql.execute(
+            """SELECT lives FROM data""").fetchone()
+        if money[0] >= 50 and lives[0] < 5:
+            a = money[0]
+            b = lives[0]
+            self.money.setText(str(a))
+            b += 1
+            a -= 50
+            sql.execute(f'UPDATE data SET money = {a}')
+            sql.execute(f'UPDATE data SET lives = {b}')
+            db.commit()
+            self.money.setText(str(a))
+            a = load_sound('покупка.mp3')
+            a.play()
+        else:
+            a = load_sound('песня_закрыта.mp3')
+            a.play()
+
+    def alllives_buying(self):
+        db = sqlite3.connect('base.db')
+        sql = db.cursor()
+
+        money = sql.execute(
+            """SELECT money FROM data""").fetchone()
+        lives = sql.execute(
+            """SELECT lives FROM data""").fetchone()
+        if money[0] >= 200 and lives[0] == 0:
+            a = money[0]
+            b = lives[0]
+            self.money.setText(str(a))
+            b += 5
+            a -= 200
+            sql.execute(f'UPDATE data SET money = {a}')
+            sql.execute(f'UPDATE data SET lives = {b}')
+            db.commit()
+            self.money.setText(str(a))
+            a = load_sound('покупка.mp3')
+            a.play()
+        else:
+            a = load_sound('песня_закрыта.mp3')
+            a.play()
+
+    def buy_connect(self):
+        self.BUY_DM.clicked.connect(self.DM_buying)
+        self.BUY_T.clicked.connect(self.T_buying)
+        self.BUY_BG.clicked.connect(self.BG_buying)
+        self.BUY_SO.clicked.connect(self.SO_buying)
+        self.BUY_BL.clicked.connect(self.BL_buying)
+        self.BUY_RB.clicked.connect(self.RB_buying)
+        self.BUY_SNA.clicked.connect(self.SNA_buying)
+        self.BUY_LEU.clicked.connect(self.LEU_buying)
+        self.BUY_HEART1.clicked.connect(self.lives_buying)
+        self.BUY_HEARTALL.clicked.connect(self.alllives_buying)
+
+
+def except_hook(cls, exception, traceback):
+    sys.__excepthook__(cls, exception, traceback)
+
 
 if __name__ == "__main__":
     import sys
 
     app = QtWidgets.QApplication(sys.argv)
     mainWindow = QtWidgets.QMainWindow()
-    mainWindow.setWindowIcon(QIcon('shop.png'))
-    ui = Ui_mainWindow1()
+    ui = Ui_mainWindow()
     ui.setupUi(mainWindow)
+    ui.buy_connect()
     mainWindow.show()
+    sys.excepthook = except_hook
     sys.exit(app.exec_())
