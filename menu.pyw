@@ -1,5 +1,6 @@
 import pygame
 import os
+import sqlite3
 import sys
 import sqlite3
 
@@ -10,6 +11,16 @@ screen = pygame.display.set_mode(size)
 pygame.display.set_caption('Feel the beat')
 pygame.display.set_icon(pygame.image.load('data/note.png'))
 mouse_pos = (0, 0)
+
+
+def load_sound(name):
+    if not pygame.mixer or not pygame.mixer.get_init():
+        pass
+    try:
+        sound = pygame.mixer.Sound(name)
+    except pygame.error:
+        print(f'Файл со звуком "{sound}" не найден')
+    return sound
 
 
 def load_image(name, colorkey=None):
@@ -145,6 +156,9 @@ class DM:
                     name = 'Dance Monkey'""").fetchone()
                 if clock == 1:
                     os.startfile('DM.pyw')
+                else:
+                    a = load_sound('data/песня_закрыта.mp3')
+                    a.play()
 
 
 class BG:
@@ -161,6 +175,9 @@ class BG:
                     name = 'Bad Guy'""").fetchone()
                 if clock == 1:
                     os.startfile('BG.pyw')
+                else:
+                    a = load_sound('data/песня_закрыта.mp3')
+                    a.play()
 
 
 class MSKWYDITD:
@@ -178,6 +195,9 @@ class MSKWYDITD:
                     You Did In The Dark'""").fetchone()
                 if clock == 1:
                     os.startfile('LEU.pyw')
+                else:
+                    a = load_sound('data/песня_закрыта.mp3')
+                    a.play()
 
 
 class SNA:
@@ -194,6 +214,9 @@ class SNA:
                     name = 'Seven Nation Army'""").fetchone()
                 if clock == 1:
                     os.startfile('SNA.pyw')
+                else:
+                    a = load_sound('data/песня_закрыта.mp3')
+                    a.play()
 
 
 class SO:
@@ -210,6 +233,9 @@ class SO:
                     name = 'Stressed Out'""").fetchone()
                 if clock == 1:
                     os.startfile('SO.pyw')
+                else:
+                    a = load_sound('data/песня_закрыта.mp3')
+                    a.play()
 
 
 class OTR:
@@ -236,6 +262,9 @@ class T:
                     name = 'Thunder'""").fetchone()
                 if clock == 1:
                     os.startfile('T.pyw')
+                else:
+                    a = load_sound('data/песня_закрыта.mp3')
+                    a.play()
 
 
 class BL:
@@ -252,6 +281,9 @@ class BL:
                     name = 'Blinding Lights'""").fetchone()
                 if clock == 1:
                     os.startfile('BL.pyw')
+                else:
+                    a = load_sound('data/песня_закрыта.mp3')
+                    a.play()
 
 
 class RA:
@@ -268,6 +300,9 @@ class RA:
                     name = 'Runaway Baby'""").fetchone()
                 if clock == 1:
                     os.startfile('RA.pyw')
+                else:
+                    a = load_sound('data/песня_закрыта.mp3')
+                    a.play()
 
 
 class A:
