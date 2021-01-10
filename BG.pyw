@@ -120,6 +120,8 @@ if __name__ == '__main__':
     sb = []
     speed = 5
     score = 0
+    flag = True
+    flag1 = True
     while lost == 0:
         for i in map_:
             sb.append(Tile())
@@ -153,13 +155,37 @@ if __name__ == '__main__':
                     elif event.type == pygame.MOUSEMOTION:
                         my_cursor.rect.topleft = event.pos
                         all_sprites.update()
-                if score >= 411:
+                if score == 180 and flag:
+                    flag = False
+                    con = sqlite3.connect("data/base.db")
+                    cur = con.cursor()
+                    b = cur.execute("""SELECT money FROM data""").fetchone()
+                    add = 50
+                    print(b)
+                    a = b[0]
+                    a += add
+                    print(a)
+                    cur.execute(
+                        f"""UPDATE data SET money = {a}""")
+                    con.commit()
+                    con.close()
+                if score >= 411 and flag1:
                     win = True
                     msg(screen, "ВЫ ВЫИГРАЛИ", color=(255, 100, 225),
                         size=70, pos=(-1, -1))
                     pygame.mixer.stop()
                     pygame.display.flip()
                     running = False
+                    con = sqlite3.connect("data/base.db")
+                    cur = con.cursor()
+                    money = cur.execute("""SELECT money FROM data""")
+                    add = 50
+                    money = money[0]
+                    money += add
+                    cur.execute(
+                        f"""UPDATE data SET money = {money}""")
+                    con.commit()
+                    con.close()
                     time.sleep(2)
                     pygame.quit()
                 msg(screen, "СЧЁТ " + str(score), color=(0, 90, 255),
