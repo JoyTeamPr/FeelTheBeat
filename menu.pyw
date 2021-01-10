@@ -343,7 +343,7 @@ class Exit:
     def click(self):
         if mouse_pos[0] in range(905, 1000):
             if mouse_pos[1] in range(610, 700):
-                pygame.quit()
+                sys.exit()
 
 
 def except_hook(cls, exception, traceback):
