@@ -138,7 +138,13 @@ class DM:
     def click(self):
         if mouse_pos[0] in range(502, 683):
             if mouse_pos[1] in range(140, 240):
-                os.startfile('DM.pyw')
+                db = sqlite3.connect('data/base.db')
+                sql = db.cursor()
+                clock = sql.execute(
+                    """SELECT open FROM songs WHERE 
+                    name = 'Dance Monkey'""").fetchone()
+                if clock == 1:
+                    os.startfile('DM.pyw')
 
 
 class BG:
@@ -148,7 +154,13 @@ class BG:
     def click(self):
         if mouse_pos[0] in range(757, 938):
             if mouse_pos[1] in range(140, 240):
-                os.startfile('BG.pyw')
+                db = sqlite3.connect('data/base.db')
+                sql = db.cursor()
+                clock = sql.execute(
+                    """SELECT open FROM songs WHERE 
+                    name = 'Bad Guy'""").fetchone()
+                if clock == 1:
+                    os.startfile('BG.pyw')
 
 
 class MSKWYDITD:
@@ -158,7 +170,14 @@ class MSKWYDITD:
     def click(self):
         if mouse_pos[0] in range(30, 215):
             if mouse_pos[1] in range(274, 370):
-                os.startfile('LEU.pyw')
+                db = sqlite3.connect('data/base.db')
+                sql = db.cursor()
+                clock = sql.execute(
+                    """SELECT open FROM songs WHERE 
+                    name = 'My Songs Know What 
+                    You Did In The Dark'""").fetchone()
+                if clock == 1:
+                    os.startfile('LEU.pyw')
 
 
 class SNA:
@@ -168,7 +187,13 @@ class SNA:
     def click(self):
         if mouse_pos[0] in range(266, 447):
             if mouse_pos[1] in range(274, 370):
-                os.startfile('SNA.pyw')
+                db = sqlite3.connect('data/base.db')
+                sql = db.cursor()
+                clock = sql.execute(
+                    """SELECT open FROM songs WHERE 
+                    name = 'Seven Nation Army'""").fetchone()
+                if clock == 1:
+                    os.startfile('SNA.pyw')
 
 
 class SO:
@@ -178,7 +203,13 @@ class SO:
     def click(self):
         if mouse_pos[0] in range(502, 683):
             if mouse_pos[1] in range(274, 370):
-                os.startfile('SO.pyw')
+                db = sqlite3.connect('data/base.db')
+                sql = db.cursor()
+                clock = sql.execute(
+                    """SELECT open FROM songs WHERE 
+                    name = 'Stressed Out'""").fetchone()
+                if clock == 1:
+                    os.startfile('SO.pyw')
 
 
 class OTR:
@@ -207,8 +238,6 @@ class T:
                     os.startfile('T.pyw')
 
 
-
-
 class BL:
     def __init__(self):
         super().__init__()
@@ -216,7 +245,13 @@ class BL:
     def click(self):
         if mouse_pos[0] in range(266, 447):
             if mouse_pos[1] in range(409, 510):
-                os.startfile('BL.pyw')
+                db = sqlite3.connect('data/base.db')
+                sql = db.cursor()
+                clock = sql.execute(
+                    """SELECT open FROM songs WHERE 
+                    name = 'Blinding Lights'""").fetchone()
+                if clock == 1:
+                    os.startfile('BL.pyw')
 
 
 class RA:
@@ -226,7 +261,13 @@ class RA:
     def click(self):
         if mouse_pos[0] in range(502, 683):
             if mouse_pos[1] in range(409, 510):
-                os.startfile('RA.pyw')
+                db = sqlite3.connect('data/base.db')
+                sql = db.cursor()
+                clock = sql.execute(
+                    """SELECT open FROM songs WHERE 
+                    name = 'Runaway Baby'""").fetchone()
+                if clock == 1:
+                    os.startfile('RA.pyw')
 
 
 class A:
