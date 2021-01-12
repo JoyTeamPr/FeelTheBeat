@@ -111,19 +111,6 @@ def motion():
         else:
             flag = False
             all_sprites.draw(screen)
-
-    elif mouse_pos[0] in range(0, 100):
-        if mouse_pos[1] in range(0, 100):
-            flag = True
-            if flag:
-                pygame.draw.rect(screen, (255, 255, 255),
-                                 (31, 274, 213, 370), 3)
-            else:
-                flag = False
-                all_sprites.draw(screen)
-        else:
-            flag = False
-            all_sprites.draw(screen)
     else:
         flag = False
         all_sprites.draw(screen)

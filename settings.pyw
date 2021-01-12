@@ -1,5 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QIcon
+import sqlite3
+import time
 
 
 class Ui_Settings(object):
@@ -70,14 +72,35 @@ class Ui_Settings(object):
                                       "Вы уверены? Все настройки и прогресс будут удалены!"))
         self.pushButton.setText(_translate("Settings", "Да"))
 
+    def look(self):
+        db = sqlite3.connect('data/base.db')
+        sql = db.cursor()
+        value = sql.execute(
+            """SELECT volume FROM data""").fetchone()
+        value = value[0]
+        self.slider.setValue(value)
+        self.slider.valueChanged.connect(self.changevalue)
+
+    def changevalue(self):
+        db = sqlite3.connect('data/base.db')
+        sql = db.cursor()
+        cvalue = self.slider.value()
+        sql.execute(f"""UPDATE data SET volume = {cvalue}""")
+        db.commit()
+
+
+def except_hook(cls, exception, traceback):
+    sys.__excepthook__(cls, exception, traceback)
+
 
 if __name__ == "__main__":
     import sys
-
     app = QtWidgets.QApplication(sys.argv)
     Settings = QtWidgets.QMainWindow()
     Settings.setWindowIcon(QIcon('data/sett.png'))
     ui = Ui_Settings()
     ui.setupUi(Settings)
+    ui.look()
     Settings.show()
+    sys.excepthook = except_hook
     sys.exit(app.exec_())

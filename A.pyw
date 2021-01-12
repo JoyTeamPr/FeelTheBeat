@@ -3,6 +3,7 @@ import random
 import time
 import os
 import sys
+import sqlite3
 
 pygame.font.init()
 pygame.init()
@@ -57,9 +58,13 @@ class Game:
         self.loosing = []
 
     def play_jbr(self):
+        db = sqlite3.connect('data/base.db')
+        sql = db.cursor()
+        value = sql.execute("""SELECT volume FROM data""").fetchone()
+        db.close()
         song_jbr = load_sound('music/A.mp3')
         song_jbr.play()
-        song_jbr.set_volume(0.3)
+        song_jbr.set_volume(value[0] / 100)
 
     def lose(self, name):
         pygame.mixer.stop()
