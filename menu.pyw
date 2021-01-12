@@ -4,7 +4,6 @@ import sqlite3
 import sys
 import sqlite3
 
-
 pygame.font.init()
 pygame.init()
 size = 1000, 700
@@ -38,6 +37,25 @@ def load_image(name, colorkey=None):
     else:
         image = image.convert_alpha()
     return image
+
+
+def msg(screen, text, color=(55, 55, 55), size=30, pos=(-1, -1)):
+    font = pygame.font.Font('data/19846.otf', size)
+    text = font.render(text, 1, color)
+    textpos = text.get_rect()
+    textpos.centerx = pos[0]
+    textpos.centery = pos[1]
+    screen.blit(text, textpos)
+
+
+def money():
+    db = sqlite3.connect('data/base.db')
+    sql = db.cursor()
+    money = sql.execute(
+        """SELECT money FROM data""").fetchone()
+    a = money[0]
+    msg(screen, str(a), color=(255, 0, 13),
+        pos=(905, 47))
 
 
 def motion():
@@ -94,8 +112,8 @@ def motion():
             flag = False
             all_sprites.draw(screen)
 
-    elif mouse_pos[0] in range(32, 213):
-        if mouse_pos[1] in range(370, 272):
+    elif mouse_pos[0] in range(0, 100):
+        if mouse_pos[1] in range(0, 100):
             flag = True
             if flag:
                 pygame.draw.rect(screen, (255, 255, 255),
@@ -191,9 +209,8 @@ class MSKWYDITD:
                 db = sqlite3.connect('data/base.db')
                 sql = db.cursor()
                 clock = sql.execute(
-                    """SELECT open FROM songs WHERE 
-                    name = 'My Songs Know What 
-                    You Did In The Dark'""").fetchone()
+                    """SELECT open FROM songs WHERE name =
+                     'My Songs Know What You Did In The Dark'""").fetchone()
                 if clock[0] == 1:
                     os.startfile('LEU.pyw')
                 else:
@@ -392,6 +409,7 @@ if __name__ == '__main__':
                 Settings.click('')
                 Exit.click('')
         motion()
+        money()
         pygame.display.flip()
         clock.tick(100)
     sys.excepthook = except_hook
