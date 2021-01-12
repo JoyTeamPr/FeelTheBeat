@@ -497,6 +497,12 @@ class Ui_mainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(mainWindow)
 
     def retranslateUi(self, mainWindow):
+        db = sqlite3.connect('data/base.db')
+        sql = db.cursor()
+        money = sql.execute(
+            """SELECT money FROM data""").fetchone()
+        a = money[0]
+        self.money.setText(str(a))
         _translate = QtCore.QCoreApplication.translate
         mainWindow.setWindowTitle(_translate("mainWindow", "Магазин"))
         self.label_5.setText(_translate("mainWindow", "ЖИЗНИ "))
