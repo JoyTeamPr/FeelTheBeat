@@ -2,6 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QIcon
 import sqlite3
 import time
+import os
 
 
 class Ui_Settings(object):
@@ -42,6 +43,7 @@ class Ui_Settings(object):
         self.label.setObjectName("label")
         self.pushButton = QtWidgets.QPushButton(self.Settings_2)
         self.pushButton.setGeometry(QtCore.QRect(420, 140, 31, 27))
+        self.pushButton.clicked.connect(self.reset_game)
         font = QtGui.QFont()
         font.setFamily("Segoe Print")
         self.pushButton.setFont(font)
@@ -88,6 +90,39 @@ class Ui_Settings(object):
         sql.execute(f"""UPDATE data SET volume = {cvalue}""")
         db.commit()
 
+    def reset_game(self):
+        db = sqlite3.connect('data/base.db')
+        sql = db.cursor()
+        sql.execute(f"""UPDATE data SET volume = 100""").fetchone()
+        sql.execute(f"""UPDATE data SET lives = 5""").fetchone()
+        sql.execute(f"""UPDATE data SET money = 150""").fetchone()
+        sql.execute(
+            f"""UPDATE songs SET open = 0 WHERE name =
+             'Bad Guy'""").fetchone()
+        sql.execute(
+            f"""UPDATE songs SET open = 0 WHERE name =
+             'Dance Monkey'""").fetchone()
+        sql.execute(
+            f"""UPDATE songs SET open = 0 WHERE name =
+             'Blinding lights'""").fetchone()
+        sql.execute(
+            f"""UPDATE songs SET open = 0 WHERE name =
+             'My Songs Know What You Did In The Dark'""").fetchone()
+        sql.execute(
+            f"""UPDATE songs SET open = 0 WHERE name =
+             'Seven Nation Army'""").fetchone()
+        sql.execute(
+            f"""UPDATE songs SET open = 0 WHERE name =
+             'Runaway Baby'""").fetchone()
+        sql.execute(
+            f"""UPDATE songs SET open = 0 WHERE name =
+             'Stressed Out'""").fetchone()
+        sql.execute(
+            f"""UPDATE songs SET open = 0 WHERE name = 'Thunder'""").fetchone()
+        db.commit()
+        db.close()
+        sys.exit()
+
 
 def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)
@@ -95,6 +130,7 @@ def except_hook(cls, exception, traceback):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     Settings = QtWidgets.QMainWindow()
     Settings.setWindowIcon(QIcon('data/sett.png'))
