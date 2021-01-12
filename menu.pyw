@@ -11,6 +11,7 @@ screen = pygame.display.set_mode(size)
 pygame.display.set_caption('Feel the beat')
 pygame.display.set_icon(pygame.image.load('data/note.png'))
 mouse_pos = (0, 0)
+mouse_position = (0, 0)
 
 
 def load_sound(name):
@@ -58,7 +59,105 @@ def money():
         pos=(905, 47))
 
 
+def motion2():
+    flag = False
+    if mouse_pos[0] in range(31, 214):
+        if mouse_pos[1] in range(410, 507):
+            flag = True
+            if flag:
+                pygame.draw.rect(screen, (255, 255, 255),
+                                 (28, 409, 189, 101), 3)
+            else:
+                flag = False
+        else:
+            flag = False
+
+    elif mouse_pos[0] in range(265, 449):
+        if mouse_pos[1] in range(410, 509):
+            flag = True
+            if flag:
+                pygame.draw.rect(screen, (255, 255, 255),
+                                 (265, 408, 184, 103), 3)
+            else:
+                flag = False
+        else:
+            flag = False
+
+    elif mouse_pos[0] in range(497, 682):
+        if mouse_pos[1] in range(413, 512):
+            flag = True
+            if flag:
+                pygame.draw.rect(screen, (255, 255, 255),
+                                 (498, 411, 184, 102), 3)
+            else:
+                flag = False
+        else:
+            flag = False
+
+    elif mouse_pos[0] in range(757, 940):
+        if mouse_pos[1] in range(414, 513):
+            flag = True
+            if flag:
+                pygame.draw.rect(screen, (255, 255, 255),
+                                 (756, 413, 184, 102), 3)
+            else:
+                flag = False
+        else:
+            flag = False
+    else:
+        flag = False
+
+
+def motion1():
+    motion2()
+    flag = False
+    if mouse_pos[0] in range(32, 212):
+        if mouse_pos[1] in range(274, 368):
+            flag = True
+            if flag:
+                pygame.draw.rect(screen, (255, 255, 255),
+                                 (31, 273, 181, 100), 3)
+            else:
+                flag = False
+        else:
+            flag = False
+
+    elif mouse_pos[0] in range(267, 446):
+        if mouse_pos[1] in range(272, 372):
+            flag = True
+            if flag:
+                pygame.draw.rect(screen, (255, 255, 255),
+                                 (265, 271, 184, 103), 3)
+            else:
+                flag = False
+        else:
+            flag = False
+
+    elif mouse_pos[0] in range(504, 682):
+        if mouse_pos[1] in range(274, 370):
+            flag = True
+            if flag:
+                pygame.draw.rect(screen, (255, 255, 255),
+                                 (503, 272, 181, 101), 3)
+            else:
+                flag = False
+        else:
+            flag = False
+
+    elif mouse_pos[0] in range(757, 937):
+        if mouse_pos[1] in range(276, 372):
+            flag = True
+            if flag:
+                pygame.draw.rect(screen, (255, 255, 255),
+                                 (757, 275, 183, 100), 3)
+            else:
+                flag = False
+        else:
+            flag = False
+
+
 def motion():
+    motion1()
     flag = False
     if mouse_pos[0] in range(30, 215):
         if mouse_pos[1] in range(140, 240):
@@ -68,10 +167,8 @@ def motion():
                                  (29, 135, 186, 101), 3)
             else:
                 flag = False
-                all_sprites.draw(screen)
         else:
             flag = False
-            all_sprites.draw(screen)
 
     elif mouse_pos[0] in range(266, 447):
         if mouse_pos[1] in range(140, 240):
@@ -81,10 +178,8 @@ def motion():
                                  (265, 137, 184, 101), 3)
             else:
                 flag = False
-                all_sprites.draw(screen)
         else:
             flag = False
-            all_sprites.draw(screen)
 
     elif mouse_pos[0] in range(502, 686):
         if mouse_pos[1] in range(140, 240):
@@ -94,10 +189,8 @@ def motion():
                                  (501, 136, 186, 101), 3)
             else:
                 flag = False
-                all_sprites.draw(screen)
         else:
             flag = False
-            all_sprites.draw(screen)
 
     elif mouse_pos[0] in range(756, 939):
         if mouse_pos[1] in range(140, 240):
@@ -107,13 +200,10 @@ def motion():
                                  (755, 136, 186, 101), 3)
             else:
                 flag = False
-                all_sprites.draw(screen)
         else:
             flag = False
-            all_sprites.draw(screen)
     else:
         flag = False
-        all_sprites.draw(screen)
 
 
 class BackGround(pygame.sprite.Sprite):
@@ -374,6 +464,7 @@ if __name__ == '__main__':
                 running = False
             if event.type == pygame.MOUSEMOTION:
                 mouse_pos = pygame.mouse.get_pos()
+                mouse_position = pygame.mouse.get_pos()
                 my_cursor.rect.topleft = event.pos
                 print(mouse_pos)
             if pygame.mouse.get_focused():
