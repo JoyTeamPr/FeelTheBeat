@@ -69,6 +69,14 @@ class Game:
         loosing3 = load_sound('music/Проигрыш (3).mp3')
         loosing = [loosing1, loosing2, loosing3]
         random.choice(loosing).play()
+        con1 = sqlite3.connect("data/base.db")
+        cur1 = con1.cursor()
+        lives = cur1.execute("""SELECT lives FROM data""").fetchone()
+        lives = lives[0]
+        cur1.execute(
+            f"""UPDATE data SET lives = {lives - 1}""")
+        con1.commit()
+        con1.close()
 
 
 class Menu:
@@ -150,8 +158,6 @@ if __name__ == '__main__':
                         sys.exit()
                     elif event.type == pygame.MOUSEBUTTONDOWN:
                         lost = sb[score].click(pygame.mouse.get_pos())
-                        if lost != 0:
-                            Game.lose('', '')
                         score += 1
                     elif event.type == pygame.MOUSEMOTION:
                         my_cursor.rect.topleft = event.pos

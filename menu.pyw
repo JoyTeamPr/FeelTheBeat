@@ -2,7 +2,6 @@ import pygame
 import os
 import sqlite3
 import sys
-import sqlite3
 
 pygame.font.init()
 pygame.init()
@@ -12,6 +11,7 @@ pygame.display.set_caption('Feel the beat')
 pygame.display.set_icon(pygame.image.load('data/note.png'))
 mouse_pos = (0, 0)
 mouse_position = (0, 0)
+counter, text = 10, '10'.rjust(3)
 
 
 def load_sound(name):
@@ -54,9 +54,15 @@ def money():
     sql = db.cursor()
     money = sql.execute(
         """SELECT money FROM data""").fetchone()
+    lives = sql.execute(
+        """SELECT lives FROM data""").fetchone()
     a = money[0]
+    b = lives[0]
     msg(screen, str(a), color=(255, 0, 13),
         pos=(905, 47))
+    msg(screen, str(b), color=(255, 255, 0),
+        pos=(684, 46))
+
 
 
 def motion2():
@@ -225,7 +231,17 @@ class JBR:
     def click(self):
         if mouse_pos[0] in range(30, 215):
             if mouse_pos[1] in range(140, 240):
-                os.startfile('JBR.pyw')
+                con1 = sqlite3.connect("data/base.db")
+                cur1 = con1.cursor()
+                lives = cur1.execute(
+                    """SELECT lives FROM data""").fetchone()
+                lives = lives[0]
+                con1.close()
+                if lives > 0:
+                    os.startfile('JBR.pyw')
+                else:
+                    a = load_sound('data/песня_закрыта.mp3')
+                    a.play()
 
 
 class AOBTD:
@@ -235,7 +251,17 @@ class AOBTD:
     def click(self):
         if mouse_pos[0] in range(266, 447):
             if mouse_pos[1] in range(140, 240):
-                os.startfile('AOBTD.pyw')
+                con1 = sqlite3.connect("data/base.db")
+                cur1 = con1.cursor()
+                lives = cur1.execute(
+                    """SELECT lives FROM data""").fetchone()
+                lives = lives[0]
+                con1.close()
+                if lives > 0:
+                    os.startfile('AOBTD.pyw')
+                else:
+                    a = load_sound('data/песня_закрыта.mp3')
+                    a.play()
 
 
 class DM:
@@ -251,7 +277,17 @@ class DM:
                     """SELECT open FROM songs WHERE 
                     name = 'Dance Monkey'""").fetchone()
                 if clock[0] == 1:
-                    os.startfile('DM.pyw')
+                    con1 = sqlite3.connect("data/base.db")
+                    cur1 = con1.cursor()
+                    lives = cur1.execute(
+                        """SELECT lives FROM data""").fetchone()
+                    lives = lives[0]
+                    con1.close()
+                    if lives > 0:
+                        os.startfile('DM.pyw')
+                    else:
+                        a = load_sound('data/песня_закрыта.mp3')
+                        a.play()
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
                     a.play()
@@ -270,7 +306,17 @@ class BG:
                     """SELECT open FROM songs WHERE 
                     name = 'Bad Guy'""").fetchone()
                 if clock[0] == 1:
-                    os.startfile('BG.pyw')
+                    con1 = sqlite3.connect("data/base.db")
+                    cur1 = con1.cursor()
+                    lives = cur1.execute(
+                        """SELECT lives FROM data""").fetchone()
+                    lives = lives[0]
+                    con1.close()
+                    if lives > 0:
+                        os.startfile('BG.pyw')
+                    else:
+                        a = load_sound('data/песня_закрыта.mp3')
+                        a.play()
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
                     a.play()
@@ -289,7 +335,17 @@ class MSKWYDITD:
                     """SELECT open FROM songs WHERE name =
                      'My Songs Know What You Did In The Dark'""").fetchone()
                 if clock[0] == 1:
-                    os.startfile('LEU.pyw')
+                    con1 = sqlite3.connect("data/base.db")
+                    cur1 = con1.cursor()
+                    lives = cur1.execute(
+                        """SELECT lives FROM data""").fetchone()
+                    lives = lives[0]
+                    con1.close()
+                    if lives > 0:
+                        os.startfile('LEU.pyw')
+                    else:
+                        a = load_sound('data/песня_закрыта.mp3')
+                        a.play()
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
                     a.play()
@@ -308,7 +364,17 @@ class SNA:
                     """SELECT open FROM songs WHERE 
                     name = 'Seven Nation Army'""").fetchone()
                 if clock[0] == 1:
-                    os.startfile('SNA.pyw')
+                    con1 = sqlite3.connect("data/base.db")
+                    cur1 = con1.cursor()
+                    lives = cur1.execute(
+                        """SELECT lives FROM data""").fetchone()
+                    lives = lives[0]
+                    con1.close()
+                    if lives > 0:
+                        os.startfile('SNA.pyw')
+                    else:
+                        a = load_sound('data/песня_закрыта.mp3')
+                        a.play()
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
                     a.play()
@@ -327,7 +393,17 @@ class SO:
                     """SELECT open FROM songs WHERE 
                     name = 'Stressed Out'""").fetchone()
                 if clock[0] == 1:
-                    os.startfile('SO.pyw')
+                    con1 = sqlite3.connect("data/base.db")
+                    cur1 = con1.cursor()
+                    lives = cur1.execute(
+                        """SELECT lives FROM data""").fetchone()
+                    lives = lives[0]
+                    con1.close()
+                    if lives > 0:
+                        os.startfile('SO.pyw')
+                    else:
+                        a = load_sound('data/песня_закрыта.mp3')
+                        a.play()
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
                     a.play()
@@ -340,7 +416,18 @@ class OTR:
     def click(self):
         if mouse_pos[0] in range(757, 938):
             if mouse_pos[1] in range(274, 370):
-                os.startfile('OTR.pyw')
+                con1 = sqlite3.connect("data/base.db")
+                cur1 = con1.cursor()
+                lives = cur1.execute(
+                    """SELECT lives FROM data""").fetchone()
+                lives = lives[0]
+                con1.close()
+                if lives > 0:
+                    os.startfile('OTR.pyw')
+                else:
+                    a = load_sound('data/песня_закрыта.mp3')
+                    a.play()
+
 
 
 class T:
@@ -356,7 +443,17 @@ class T:
                     """SELECT open FROM songs WHERE 
                     name = 'Thunder'""").fetchone()
                 if clock[0] == 1:
-                    os.startfile('T.pyw')
+                    con1 = sqlite3.connect("data/base.db")
+                    cur1 = con1.cursor()
+                    lives = cur1.execute(
+                        """SELECT lives FROM data""").fetchone()
+                    lives = lives[0]
+                    con1.close()
+                    if lives > 0:
+                        os.startfile('T.pyw')
+                    else:
+                        a = load_sound('data/песня_закрыта.mp3')
+                        a.play()
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
                     a.play()
@@ -375,7 +472,17 @@ class BL:
                     """SELECT open FROM songs WHERE 
                     name = 'Blinding Lights'""").fetchone()
                 if clock[0] == 1:
-                    os.startfile('BL.pyw')
+                    con1 = sqlite3.connect("data/base.db")
+                    cur1 = con1.cursor()
+                    lives = cur1.execute(
+                        """SELECT lives FROM data""").fetchone()
+                    lives = lives[0]
+                    con1.close()
+                    if lives > 0:
+                        os.startfile('BL.pyw')
+                    else:
+                        a = load_sound('data/песня_закрыта.mp3')
+                        a.play()
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
                     a.play()
@@ -394,7 +501,17 @@ class RA:
                     """SELECT open FROM songs WHERE 
                     name = 'Runaway Baby'""").fetchone()
                 if clock[0] == 1:
-                    os.startfile('RA.pyw')
+                    con1 = sqlite3.connect("data/base.db")
+                    cur1 = con1.cursor()
+                    lives = cur1.execute(
+                        """SELECT lives FROM data""").fetchone()
+                    lives = lives[0]
+                    con1.close()
+                    if lives > 0:
+                        os.startfile('RA.pyw')
+                    else:
+                        a = load_sound('data/песня_закрыта.mp3')
+                        a.play()
                 else:
                     a = load_sound('data/песня_закрыта.mp3')
                     a.play()
@@ -407,7 +524,16 @@ class A:
     def click(self):
         if mouse_pos[0] in range(757, 938):
             if mouse_pos[1] in range(409, 510):
-                os.startfile('A.pyw')
+                con1 = sqlite3.connect("data/base.db")
+                cur1 = con1.cursor()
+                lives = cur1.execute("""SELECT lives FROM data""").fetchone()
+                lives = lives[0]
+                con1.close()
+                if lives > 0:
+                    os.startfile('A.pyw')
+                else:
+                    a = load_sound('data/песня_закрыта.mp3')
+                    a.play()
 
 
 class Shop:
@@ -458,7 +584,51 @@ if __name__ == '__main__':
 
     pygame.mouse.set_visible(False)
     running = True
+    time = 38000
+    flag_live = False
     while running:
+        all_sprites.draw(screen)
+        pygame.draw.rect(screen, (255, 0, 0),
+                         (649, 74, 72, 10), 0)
+        time -= 1
+        print(time)
+        if time >= 37000:
+            pygame.draw.rect(screen, (255, 255, 255),
+                             (650, 75, 70, 8), 0)
+        if 30000 < time < 37000:
+            pygame.draw.rect(screen, (255, 255, 255),
+                             (650, 75, 60, 8), 0)
+        if 25000 < time < 30000:
+            pygame.draw.rect(screen, (255, 255, 255),
+                             (650, 75, 50, 8), 0)
+        if 20000 < time < 25000:
+            pygame.draw.rect(screen, (255, 255, 255),
+                             (650, 75, 40, 8), 0)
+        if 15000 < time < 20000:
+            pygame.draw.rect(screen, (255, 255, 255),
+                             (650, 75, 30, 8), 0)
+        if 10000 < time < 15000:
+            pygame.draw.rect(screen, (255, 255, 255),
+                             (650, 75, 20, 8), 0)
+        if 5000 < time < 10000:
+            pygame.draw.rect(screen, (255, 255, 255),
+                             (650, 75, 10, 8), 0)
+        if time < 5000:
+            pygame.draw.rect(screen, (255, 255, 255),
+                             (650, 75, 0, 8), 0)
+        if time <= 0 and not flag_live:
+            time = 38000
+            flag_live = True
+            con = sqlite3.connect("data/base.db")
+            cur = con.cursor()
+            b = cur.execute("""SELECT lives FROM data""").fetchone()
+            b = b[0]
+            if b != 5:
+                flag_live = False
+                cur.execute(
+                    f"""UPDATE data SET lives = {b + 1}""")
+                con.commit()
+            con.close()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
@@ -467,8 +637,6 @@ if __name__ == '__main__':
                 mouse_position = pygame.mouse.get_pos()
                 my_cursor.rect.topleft = event.pos
                 print(mouse_pos)
-            if pygame.mouse.get_focused():
-                all_sprites.draw(screen)
             all_sprites.update()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 JBR.click('')
