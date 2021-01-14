@@ -3,6 +3,7 @@ import random
 import time
 import os
 import sys
+import sqlite3
 
 pygame.font.init()
 pygame.init()

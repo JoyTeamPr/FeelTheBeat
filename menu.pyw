@@ -635,7 +635,6 @@ if __name__ == '__main__':
                 mouse_pos = pygame.mouse.get_pos()
                 mouse_position = pygame.mouse.get_pos()
                 my_cursor.rect.topleft = event.pos
-                print(mouse_pos)
             all_sprites.update()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 JBR.click('')
