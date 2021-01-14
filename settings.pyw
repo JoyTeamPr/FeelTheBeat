@@ -28,12 +28,8 @@ class Ui_Settings(object):
         self.text.setFont(font)
         self.text.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
         self.text.setObjectName("text")
-        self.reset = QtWidgets.QPushButton(self.Settings_2)
-        self.reset.setGeometry(QtCore.QRect(220, 80, 71, 41))
         font = QtGui.QFont()
         font.setFamily("Segoe Print")
-        self.reset.setFont(font)
-        self.reset.setObjectName("reset")
         self.label = QtWidgets.QLabel(self.Settings_2)
         self.label.setGeometry(QtCore.QRect(10, 130, 441, 41))
         font = QtGui.QFont()
@@ -42,7 +38,7 @@ class Ui_Settings(object):
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.pushButton = QtWidgets.QPushButton(self.Settings_2)
-        self.pushButton.setGeometry(QtCore.QRect(420, 140, 31, 27))
+        self.pushButton.setGeometry(QtCore.QRect(370, 140, 60, 27))
         self.pushButton.clicked.connect(self.reset_game)
         font = QtGui.QFont()
         font.setFamily("Segoe Print")
@@ -57,7 +53,6 @@ class Ui_Settings(object):
         self.label_2.raise_()
         self.slider.raise_()
         self.text.raise_()
-        self.reset.raise_()
         self.label.raise_()
         self.pushButton.raise_()
         Settings.setCentralWidget(self.Settings_2)
@@ -69,10 +64,9 @@ class Ui_Settings(object):
         _translate = QtCore.QCoreApplication.translate
         Settings.setWindowTitle(_translate("Settings", "Настройки"))
         self.text.setText(_translate("Settings", "Громкость"))
-        self.reset.setText(_translate("Settings", "Сброс"))
         self.label.setText(_translate("Settings",
                                       "Вы уверены? Все настройки и прогресс будут удалены!"))
-        self.pushButton.setText(_translate("Settings", "Да"))
+        self.pushButton.setText(_translate("Settings", "Сброс"))
 
     def look(self):
         db = sqlite3.connect('data/base.db')

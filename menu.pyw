@@ -54,20 +54,22 @@ def msg(screen, text, color=(55, 55, 55), size=30, pos=(-1, -1)):
 def money():
     db = sqlite3.connect('data/base.db')
     sql = db.cursor()
-    money = sql.execute(
+    money_ = sql.execute(
         """SELECT money FROM data""").fetchone()
     lives = sql.execute(
         """SELECT lives FROM data""").fetchone()
-    a = money[0]
-    b = lives[0]
+    a = money_[0]
+    b_ = lives[0]
     msg(screen, str(a), color=(255, 0, 13),
         pos=(905, 47))
-    msg(screen, str(b), color=(255, 255, 0),
+    msg(screen, str(b_), color=(255, 255, 0),
         pos=(684, 46))
 
 
 def motion2():
     flag = False
+    if flag:
+        pass
     if mouse_pos[0] in range(31, 214):
         if mouse_pos[1] in range(410, 507):
             flag = True
@@ -172,6 +174,8 @@ def motion1():
 def motion():
     motion1()
     flag = False
+    if flag:
+        pass
     if mouse_pos[0] in range(30, 215):
         if mouse_pos[1] in range(140, 240):
             flag = True
@@ -239,7 +243,7 @@ class JBR:
         super().__init__()
 
     @staticmethod
-    def click(self):
+    def click():
         if mouse_pos[0] in range(30, 215):
             if mouse_pos[1] in range(140, 240):
                 con1 = sqlite3.connect("data/base.db")
@@ -260,7 +264,7 @@ class AOBTD:
         super().__init__()
 
     @staticmethod
-    def click(self):
+    def click():
         if mouse_pos[0] in range(266, 447):
             if mouse_pos[1] in range(140, 240):
                 con1 = sqlite3.connect("data/base.db")
@@ -281,15 +285,15 @@ class DM:
         super().__init__()
 
     @staticmethod
-    def click(self):
+    def click():
         if mouse_pos[0] in range(502, 683):
             if mouse_pos[1] in range(140, 240):
                 db = sqlite3.connect('data/base.db')
                 sql = db.cursor()
-                clock = sql.execute(
+                clock1 = sql.execute(
                     """SELECT open FROM songs WHERE 
                     name = 'Dance Monkey'""").fetchone()
-                if clock[0] == 1:
+                if clock1[0] == 1:
                     con1 = sqlite3.connect("data/base.db")
                     cur1 = con1.cursor()
                     lives = cur1.execute(
@@ -311,15 +315,15 @@ class BG:
         super().__init__()
 
     @staticmethod
-    def click(self):
+    def click():
         if mouse_pos[0] in range(757, 938):
             if mouse_pos[1] in range(140, 240):
                 db = sqlite3.connect('data/base.db')
                 sql = db.cursor()
-                clock = sql.execute(
+                clock2 = sql.execute(
                     """SELECT open FROM songs WHERE 
                     name = 'Bad Guy'""").fetchone()
-                if clock[0] == 1:
+                if clock2[0] == 1:
                     con1 = sqlite3.connect("data/base.db")
                     cur1 = con1.cursor()
                     lives = cur1.execute(
@@ -341,15 +345,15 @@ class MSKWYDITD:
         super().__init__()
 
     @staticmethod
-    def click(self):
+    def click():
         if mouse_pos[0] in range(30, 215):
             if mouse_pos[1] in range(274, 370):
                 db = sqlite3.connect('data/base.db')
                 sql = db.cursor()
-                clock = sql.execute(
+                clock3 = sql.execute(
                     """SELECT open FROM songs WHERE name =
                      'My Songs Know What You Did In The Dark'""").fetchone()
-                if clock[0] == 1:
+                if clock3[0] == 1:
                     con1 = sqlite3.connect("data/base.db")
                     cur1 = con1.cursor()
                     lives = cur1.execute(
@@ -371,15 +375,15 @@ class SNA:
         super().__init__()
 
     @staticmethod
-    def click(self):
+    def click():
         if mouse_pos[0] in range(266, 447):
             if mouse_pos[1] in range(274, 370):
                 db = sqlite3.connect('data/base.db')
                 sql = db.cursor()
-                clock = sql.execute(
+                clock4 = sql.execute(
                     """SELECT open FROM songs WHERE 
                     name = 'Seven Nation Army'""").fetchone()
-                if clock[0] == 1:
+                if clock4[0] == 1:
                     con1 = sqlite3.connect("data/base.db")
                     cur1 = con1.cursor()
                     lives = cur1.execute(
@@ -401,15 +405,15 @@ class SO:
         super().__init__()
 
     @staticmethod
-    def click(self):
+    def click():
         if mouse_pos[0] in range(502, 683):
             if mouse_pos[1] in range(274, 370):
                 db = sqlite3.connect('data/base.db')
                 sql = db.cursor()
-                clock = sql.execute(
+                clock5 = sql.execute(
                     """SELECT open FROM songs WHERE 
                     name = 'Stressed Out'""").fetchone()
-                if clock[0] == 1:
+                if clock5[0] == 1:
                     con1 = sqlite3.connect("data/base.db")
                     cur1 = con1.cursor()
                     lives = cur1.execute(
@@ -431,7 +435,7 @@ class OTR:
         super().__init__()
 
     @staticmethod
-    def click(self):
+    def click():
         if mouse_pos[0] in range(757, 938):
             if mouse_pos[1] in range(274, 370):
                 con1 = sqlite3.connect("data/base.db")
@@ -452,15 +456,15 @@ class T:
         super().__init__()
 
     @staticmethod
-    def click(self):
+    def click():
         if mouse_pos[0] in range(30, 215):
             if mouse_pos[1] in range(409, 510):
                 db = sqlite3.connect('data/base.db')
                 sql = db.cursor()
-                clock = sql.execute(
+                clock6 = sql.execute(
                     """SELECT open FROM songs WHERE 
                     name = 'Thunder'""").fetchone()
-                if clock[0] == 1:
+                if clock6[0] == 1:
                     con1 = sqlite3.connect("data/base.db")
                     cur1 = con1.cursor()
                     lives = cur1.execute(
@@ -482,15 +486,15 @@ class BL:
         super().__init__()
 
     @staticmethod
-    def click(self):
+    def click():
         if mouse_pos[0] in range(266, 447):
             if mouse_pos[1] in range(409, 510):
                 db = sqlite3.connect('data/base.db')
                 sql = db.cursor()
-                clock = sql.execute(
+                clock7 = sql.execute(
                     """SELECT open FROM songs WHERE 
                     name = 'Blinding Lights'""").fetchone()
-                if clock[0] == 1:
+                if clock7[0] == 1:
                     con1 = sqlite3.connect("data/base.db")
                     cur1 = con1.cursor()
                     lives = cur1.execute(
@@ -512,15 +516,15 @@ class RA:
         super().__init__()
 
     @staticmethod
-    def click(self):
+    def click():
         if mouse_pos[0] in range(502, 683):
             if mouse_pos[1] in range(409, 510):
                 db = sqlite3.connect('data/base.db')
                 sql = db.cursor()
-                clock = sql.execute(
+                clock8 = sql.execute(
                     """SELECT open FROM songs WHERE 
                     name = 'Runaway Baby'""").fetchone()
-                if clock[0] == 1:
+                if clock8[0] == 1:
                     con1 = sqlite3.connect("data/base.db")
                     cur1 = con1.cursor()
                     lives = cur1.execute(
@@ -542,7 +546,7 @@ class A:
         super().__init__()
 
     @staticmethod
-    def click(self):
+    def click():
         if mouse_pos[0] in range(757, 938):
             if mouse_pos[1] in range(409, 510):
                 con1 = sqlite3.connect("data/base.db")
@@ -562,7 +566,7 @@ class Shop:
         super().__init__()
 
     @staticmethod
-    def click(self):
+    def click():
         if mouse_pos[0] in range(273, 385):
             if mouse_pos[1] in range(610, 700):
                 os.startfile('shop.pyw')
@@ -573,7 +577,7 @@ class Settings:
         super().__init__()
 
     @staticmethod
-    def click(self):
+    def click():
         if mouse_pos[0] in range(542, 680):
             if mouse_pos[1] in range(610, 700):
                 os.startfile('settings.pyw')
@@ -584,7 +588,7 @@ class Exit:
         super().__init__()
 
     @staticmethod
-    def click(self):
+    def click():
         if mouse_pos[0] in range(905, 1000):
             if mouse_pos[1] in range(610, 700):
                 sys.exit()
@@ -660,21 +664,21 @@ if __name__ == '__main__':
                 my_cursor.rect.topleft = event.pos
             all_sprites.update()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                JBR.click('')
-                AOBTD.click('')
-                DM.click('')
-                BG.click('')
-                MSKWYDITD.click('')
-                SNA.click('')
-                SO.click('')
-                OTR.click('')
-                T.click('')
-                BL.click('')
-                RA.click('')
-                A.click('')
-                Shop.click('')
-                Settings.click('')
-                Exit.click('')
+                JBR.click()
+                AOBTD.click()
+                DM.click()
+                BG.click()
+                MSKWYDITD.click()
+                SNA.click()
+                SO.click()
+                OTR.click()
+                T.click()
+                BL.click()
+                RA.click()
+                A.click()
+                Shop.click()
+                Settings.click()
+                Exit.click()
         motion()
         money()
         pygame.display.flip()
