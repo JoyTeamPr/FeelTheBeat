@@ -591,7 +591,6 @@ if __name__ == '__main__':
         pygame.draw.rect(screen, (255, 0, 0),
                          (649, 74, 72, 10), 0)
         time -= 1
-        print(time)
         if time >= 37000:
             pygame.draw.rect(screen, (255, 255, 255),
                              (650, 75, 70, 8), 0)
