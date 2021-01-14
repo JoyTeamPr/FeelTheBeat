@@ -38,7 +38,7 @@ class Ui_Settings(object):
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.pushButton = QtWidgets.QPushButton(self.Settings_2)
-        self.pushButton.setGeometry(QtCore.QRect(370, 140, 60, 27))
+        self.pushButton.setGeometry(QtCore.QRect(400, 140, 60, 27))
         self.pushButton.clicked.connect(self.reset_game)
         font = QtGui.QFont()
         font.setFamily("Segoe Print")
