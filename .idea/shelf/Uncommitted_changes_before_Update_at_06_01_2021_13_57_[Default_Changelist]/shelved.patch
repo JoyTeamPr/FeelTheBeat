@@ -1,0 +1,103 @@
+Index: main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import pygame\r\nimport random\r\nimport os\r\nimport sys\r\n\r\npygame.font.init()\r\npygame.init()\r\nsize = 1000, 700\r\nscreen = pygame.display.set_mode(size)\r\npygame.display.set_caption('Feel the beat')\r\npygame.display.set_icon(pygame.image.load('data/note.png'))\r\n\r\n\r\ndef msg(screen, text, color=(55, 55, 55), size=36, pos=(-1, -1)):\r\n    if pos[0] == -1:\r\n        pos = (screen.get_rect().centerx, pos[1])\r\n    if pos[1] == -1:\r\n        pos = (pos[0], screen.get_rect().centery)\r\n    font = pygame.font.Font('data/19846.otf', size)\r\n    text = font.render(text, 1, color)\r\n    textpos = text.get_rect()\r\n    textpos.centerx = pos[0]\r\n    textpos.centery = pos[1]\r\n    screen.blit(text, textpos)\r\n\r\n\r\ndef load_image(name, colorkey=None):\r\n    fullname = os.path.join('data', name)\r\n    if not os.path.isfile(fullname):\r\n        print(f\"Файл с изображением '{fullname}' не найден\")\r\n        sys.exit()\r\n    image = pygame.image.load(fullname)\r\n    if colorkey is not None:\r\n        image = image.convert()\r\n        if colorkey == -1:\r\n            colorkey = image.get_at((0, 0))\r\n        image.set_colorkey(colorkey)\r\n    else:\r\n        image = image.convert_alpha()\r\n    return image\r\n\r\n\r\ndef load_sound(name):\r\n    if not pygame.mixer or not pygame.mixer.get_init():\r\n        pass\r\n    try:\r\n        sound = pygame.mixer.Sound(name)\r\n    except pygame.error:\r\n        print(f'Файл со звуком \"{sound}\" не найден')\r\n    return sound\r\n\r\n\r\nclass Game:\r\n    def __init__(self):\r\n        super().__init__()\r\n        self.loosing = []\r\n\r\n    def play_jbr(self):\r\n        song_jbr = load_sound('music/JBR.mp3')\r\n        song_jbr.play()\r\n        song_jbr.set_volume(0.3)\r\n\r\n    def lose(self, name):\r\n        pygame.mixer.stop()\r\n        loosing1 = load_sound('music/Проигрыш (1).mp3')\r\n        loosing2 = load_sound('music/Проигрыш (2).mp3')\r\n        loosing3 = load_sound('music/Проигрыш (3).mp3')\r\n        loosing = [loosing1, loosing2, loosing3]\r\n        random.choice(loosing).play()\r\n\r\n\r\nclass Menu:\r\n    Game.play_jbr('JBR')\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- main.py	(revision 36bf44509cd0a2d166be671effe3d3b03b2f0774)
++++ main.py	(date 1609926775918)
+@@ -72,3 +72,92 @@
+ class Menu:
+     Game.play_jbr('JBR')
+ 
++
++class Tile:
++    x = 0
++    y = -700 // 5
++    h = 1000 // 4 - 1
++    len_ = 700 // 5
++    flag = True
++
++    def pos(self, name):
++        self.x = name * 1000 // 4
++
++    def update(self, screen):
++        if self.flag:
++            pygame.draw.rect(screen, (0, 0, 0),
++                             [self.x, self.y, self.h, self.len_])
++        else:
++            pygame.draw.rect(screen, (180, 180, 180),
++                             [self.x, self.y, self.h, self.len_])
++
++    def click(self, position):
++        if position[0] in range(self.x, self.h + self.x):
++            if position[1] in range(self.y, self.len_ + self.y):
++                self.flag = False
++                return 0
++        return 1
++
++
++if __name__ == '__main__':
++    all_sprites = pygame.sprite.Group()
++    my_cursor_image = load_image('arrow.png')
++    my_cursor = pygame.sprite.Sprite(all_sprites)
++    my_cursor.image = my_cursor_image
++    my_cursor.rect = my_cursor.image.get_rect()
++    pygame.mouse.set_visible(True)
++    clock = pygame.time.Clock()
++    map_ = [0, 1, 2, 1, 1, 2, 3, 3, 2, 1, 2, 3, 3, 1, 2, 3, 1, 0, 2, 3, 1, 0,
++            1, 2, 3, 0, 1, 2, 3]
++    lost = 0
++    time = 0
++    delta = 60
++    sb = []
++    speed = 5
++    score = 0
++    while lost == 0:
++        for i in map_:
++            sb.append(Tile())
++            sb[-1].pos(i)
++            if lost != 0:
++                break
++            for j in range(700 // (5 * speed)):
++                time += 1 / delta
++                clock.tick(delta)
++                screen.fill((224, 224, 255))
++                if lost != 0:
++                    break
++                for k in range(len(sb)):
++                    try:
++                        sb[k].y += speed
++                        sb[k].update(screen)
++                        if sb[k].y > 700 - sb[k].len_ and sb[k].flag:
++                            lost = 1
++                    finally:
++                        pass
++                for event in pygame.event.get():
++                    if event.type == pygame.QUIT or \
++                            (event.type == pygame.KEYDOWN and event.key
++                             == pygame.K_ESCAPE):
++                        pygame.quit()
++                    elif event.type == pygame.MOUSEBUTTONDOWN:
++                        lost = sb[score].click(pygame.mouse.get_pos())
++                        if lost != 0:
++                            Game.lose('', '')
++                        score += 1
++                msg(screen, "СЧЁТ " + str(score), color=(0, 128, 255),
++                    pos=(-1, 30))
++                pygame.display.update()
++        speed += 1
++    pygame.mixer.music.stop()
++    msg(screen, f"ВЫ ПРОИГРАЛИ. ВАШ СЧЁТ: {score - 1}", color=(110, 128, 225),
++        size=70, pos=(-1, -1))
++    running = True
++    while running:
++        for event in pygame.event.get():
++            if event.type == pygame.QUIT:
++                running = False
++            if event.type == pygame.MOUSEMOTION:
++                my_cursor.rect.topleft = event.pos
++        pygame.display.flip()
++    pygame.quit()
+\ No newline at end of file
