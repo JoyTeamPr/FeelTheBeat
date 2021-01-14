@@ -5,8 +5,8 @@ import sys
 
 pygame.font.init()
 pygame.init()
-size = 1000, 700
-screen = pygame.display.set_mode(size)
+win_size = 1000, 700
+screen = pygame.display.set_mode(win_size)
 pygame.display.set_caption('Feel the beat')
 pygame.display.set_icon(pygame.image.load('data/note.png'))
 mouse_pos = (0, 0)
@@ -42,13 +42,13 @@ def load_image(name, colorkey=None):
     return image
 
 
-def msg(screen, text, color=(55, 55, 55), size=30, pos=(-1, -1)):
+def msg(screen_, text_, color=(55, 55, 55), size=30, pos=(-1, -1)):
     font = pygame.font.Font('data/19846.otf', size)
-    text = font.render(text, 1, color)
-    textpos = text.get_rect()
+    text_ = font.render(text_, 1, color)
+    textpos = text_.get_rect()
     textpos.centerx = pos[0]
     textpos.centery = pos[1]
-    screen.blit(text, textpos)
+    screen_.blit(text_, textpos)
 
 
 def money():

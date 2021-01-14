@@ -42,6 +42,7 @@ def load_image(name, colorkey=None):
 
 
 def load_sound(name):
+    sound = ''
     if not pygame.mixer or not pygame.mixer.get_init():
         pass
     try:

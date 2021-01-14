@@ -65,7 +65,8 @@ class Ui_Settings(object):
         Settings.setWindowTitle(_translate("Settings", "Настройки"))
         self.text.setText(_translate("Settings", "Громкость"))
         self.label.setText(_translate("Settings",
-                                      "Вы уверены? Все настройки и прогресс будут удалены!"))
+                                      "Вы уверены? Все настройки и прогресс"
+                                      " будут удалены!"))
         self.pushButton.setText(_translate("Settings", "Сброс"))
 
     def look(self):
@@ -89,7 +90,7 @@ class Ui_Settings(object):
         sql = db.cursor()
         sql.execute(f"""UPDATE data SET volume = 100""").fetchone()
         sql.execute(f"""UPDATE data SET lives = 5""").fetchone()
-        sql.execute(f"""UPDATE data SET money = 150""").fetchone()
+        sql.execute(f"""UPDATE data SET money = 200""").fetchone()
         sql.execute(
             f"""UPDATE songs SET open = 0 WHERE name =
              'Bad Guy'""").fetchone()
@@ -98,7 +99,7 @@ class Ui_Settings(object):
              'Dance Monkey'""").fetchone()
         sql.execute(
             f"""UPDATE songs SET open = 0 WHERE name =
-             'Blinding lights'""").fetchone()
+             'Blinding Lights'""").fetchone()
         sql.execute(
             f"""UPDATE songs SET open = 0 WHERE name =
              'My Songs Know What You Did In The Dark'""").fetchone()

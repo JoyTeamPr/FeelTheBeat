@@ -5,6 +5,7 @@ import sqlite3
 
 def load_sound(name):
     pygame.mixer.init()
+    sound = ''
     if not pygame.mixer or not pygame.mixer.get_init():
         pass
     try:
