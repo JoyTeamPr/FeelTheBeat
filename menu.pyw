@@ -12,9 +12,11 @@ pygame.display.set_icon(pygame.image.load('data/note.png'))
 mouse_pos = (0, 0)
 mouse_position = (0, 0)
 counter, text = 10, '10'.rjust(3)
+all_sprites = pygame.sprite.Group()
 
 
 def load_sound(name):
+    sound = ''
     if not pygame.mixer or not pygame.mixer.get_init():
         pass
     try:
@@ -62,7 +64,6 @@ def money():
         pos=(905, 47))
     msg(screen, str(b), color=(255, 255, 0),
         pos=(684, 46))
-
 
 
 def motion2():
@@ -113,6 +114,9 @@ def motion2():
     else:
         flag = False
 
+    if flag:
+        pass
+
 
 def motion1():
     motion2()
@@ -160,6 +164,9 @@ def motion1():
                 flag = False
         else:
             flag = False
+
+    if flag:
+        pass
 
 
 def motion():
@@ -211,6 +218,9 @@ def motion():
     else:
         flag = False
 
+    if flag:
+        pass
+
 
 class BackGround(pygame.sprite.Sprite):
     image = load_image('menu.png')
@@ -228,6 +238,7 @@ class JBR:
     def __init__(self):
         super().__init__()
 
+    @staticmethod
     def click(self):
         if mouse_pos[0] in range(30, 215):
             if mouse_pos[1] in range(140, 240):
@@ -248,6 +259,7 @@ class AOBTD:
     def __init__(self):
         super().__init__()
 
+    @staticmethod
     def click(self):
         if mouse_pos[0] in range(266, 447):
             if mouse_pos[1] in range(140, 240):
@@ -268,6 +280,7 @@ class DM:
     def __init__(self):
         super().__init__()
 
+    @staticmethod
     def click(self):
         if mouse_pos[0] in range(502, 683):
             if mouse_pos[1] in range(140, 240):
@@ -297,6 +310,7 @@ class BG:
     def __init__(self):
         super().__init__()
 
+    @staticmethod
     def click(self):
         if mouse_pos[0] in range(757, 938):
             if mouse_pos[1] in range(140, 240):
@@ -326,6 +340,7 @@ class MSKWYDITD:
     def __init__(self):
         super().__init__()
 
+    @staticmethod
     def click(self):
         if mouse_pos[0] in range(30, 215):
             if mouse_pos[1] in range(274, 370):
@@ -355,6 +370,7 @@ class SNA:
     def __init__(self):
         super().__init__()
 
+    @staticmethod
     def click(self):
         if mouse_pos[0] in range(266, 447):
             if mouse_pos[1] in range(274, 370):
@@ -384,6 +400,7 @@ class SO:
     def __init__(self):
         super().__init__()
 
+    @staticmethod
     def click(self):
         if mouse_pos[0] in range(502, 683):
             if mouse_pos[1] in range(274, 370):
@@ -413,6 +430,7 @@ class OTR:
     def __init__(self):
         super().__init__()
 
+    @staticmethod
     def click(self):
         if mouse_pos[0] in range(757, 938):
             if mouse_pos[1] in range(274, 370):
@@ -429,11 +447,11 @@ class OTR:
                     a.play()
 
 
-
 class T:
     def __init__(self):
         super().__init__()
 
+    @staticmethod
     def click(self):
         if mouse_pos[0] in range(30, 215):
             if mouse_pos[1] in range(409, 510):
@@ -463,6 +481,7 @@ class BL:
     def __init__(self):
         super().__init__()
 
+    @staticmethod
     def click(self):
         if mouse_pos[0] in range(266, 447):
             if mouse_pos[1] in range(409, 510):
@@ -492,6 +511,7 @@ class RA:
     def __init__(self):
         super().__init__()
 
+    @staticmethod
     def click(self):
         if mouse_pos[0] in range(502, 683):
             if mouse_pos[1] in range(409, 510):
@@ -521,6 +541,7 @@ class A:
     def __init__(self):
         super().__init__()
 
+    @staticmethod
     def click(self):
         if mouse_pos[0] in range(757, 938):
             if mouse_pos[1] in range(409, 510):
@@ -540,6 +561,7 @@ class Shop:
     def __init__(self):
         super().__init__()
 
+    @staticmethod
     def click(self):
         if mouse_pos[0] in range(273, 385):
             if mouse_pos[1] in range(610, 700):
@@ -550,6 +572,7 @@ class Settings:
     def __init__(self):
         super().__init__()
 
+    @staticmethod
     def click(self):
         if mouse_pos[0] in range(542, 680):
             if mouse_pos[1] in range(610, 700):
@@ -560,6 +583,7 @@ class Exit:
     def __init__(self):
         super().__init__()
 
+    @staticmethod
     def click(self):
         if mouse_pos[0] in range(905, 1000):
             if mouse_pos[1] in range(610, 700):
@@ -574,7 +598,6 @@ if __name__ == '__main__':
     all_sprites = pygame.sprite.Group()
     clock = pygame.time.Clock()
 
-    all_sprites = pygame.sprite.Group()
     BackGround()
     my_cursor_image = load_image('arrow.png')
     my_cursor = pygame.sprite.Sprite(all_sprites)
